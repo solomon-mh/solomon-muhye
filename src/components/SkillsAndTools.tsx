@@ -1,31 +1,206 @@
-import { motion } from "framer-motion";
+import { useState, type JSX } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaDocker,
+  FaLaravel,
+  FaAws,
+  FaFigma,
+  FaVuejs,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiTypescript,
+  SiPostman,
+  SiVercel,
+  SiMongodb,
+  SiNestjs,
+  SiPostgresql,
+  SiRender,
+  SiNetlify,
+  SiNextdotjs,
+} from "react-icons/si";
+import { BsTools } from "react-icons/bs";
+
+type SkillCategory = "Frontend" | "Backend" | "Tools" | "DevOps" | "Design";
+type SkillItem = { icon: JSX.Element; label: string };
+type SkillData = Record<SkillCategory, SkillItem[]>;
+
+const skillData: SkillData = {
+  Frontend: [
+    { icon: <FaReact className="hover:animate-spin-slow" />, label: "React" },
+    {
+      icon: <SiNextdotjs className="hover:text-black dark:hover:text-white" />,
+      label: "Next.js",
+    },
+    { icon: <FaVuejs className="hover:text-[#42b883]" />, label: "Vue.js" },
+    {
+      icon: <SiTailwindcss className="hover:text-[#06b6d4]" />,
+      label: "Tailwind CSS",
+    },
+    {
+      icon: <SiTypescript className="hover:text-[#3178c6]" />,
+      label: "TypeScript",
+    },
+  ],
+  Backend: [
+    { icon: <SiNestjs className="hover:text-[#e0234e]" />, label: "NestJS" },
+    { icon: <FaNodeJs className="hover:text-[#68a063]" />, label: "Node.js" },
+    {
+      icon: <SiPostgresql className="hover:text-[#336791]" />,
+      label: "PostgreSQL",
+    },
+    { icon: <FaLaravel className="hover:text-[#ff2d20]" />, label: "Laravel" },
+    { icon: <SiMongodb className="hover:text-[#47a248]" />, label: "MongoDB" },
+  ],
+  Tools: [
+    { icon: <FaGitAlt className="hover:text-[#f05032]" />, label: "Git" },
+    { icon: <SiPostman className="hover:text-[#ff6c37]" />, label: "Postman" },
+    {
+      icon: <SiVercel className="hover:text-black dark:hover:text-white" />,
+      label: "Vercel",
+    },
+    { icon: <SiNetlify className="hover:text-[#00ad9f]" />, label: "Netlify" },
+    { icon: <SiRender className="hover:text-[#46e3b7]" />, label: "Render" },
+  ],
+  DevOps: [
+    { icon: <FaDocker className="hover:text-[#2496ed]" />, label: "Docker" },
+    {
+      icon: <SiVercel className="hover:text-black dark:hover:text-white" />,
+      label: "CI/CD",
+    },
+    { icon: <FaAws className="hover:text-[#ff9900]" />, label: "AWS" },
+  ],
+  Design: [
+    { icon: <FaFigma className="hover:text-[#f24e1e]" />, label: "Figma" },
+  ],
+};
+
+const tabs: SkillCategory[] = Object.keys(skillData) as SkillCategory[];
 
 const SkillsAndTools = () => {
+  const [activeTab, setActiveTab] = useState<SkillCategory>("Frontend");
+
   return (
-    <section id="skills" className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
-      <h2 className="text-3xl font-bold text-center mb-10">Skills & Tools</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        {[
-          "React",
-          "Next.js",
-          "TailwindCSS",
-          "Framer Motion",
-          "Node.js",
-          "NestJS",
-          "MongoDB",
-          "Firebase",
-        ].map((skill, i) => (
+    <section id="skills" className="relative py-20 overflow-hidden">
+      {/* Animated background elements */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.1 }}
+        className="absolute inset-0 -z-10 pointer-events-none"
+      >
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-green-500 blur-3xl opacity-20"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-40 h-40 rounded-full bg-purple-500 blur-3xl opacity-20"></div>
+      </motion.div>
+
+      <div className="mx-auto text-center">
+        {/* Animated title */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative inline-block"
+        >
+          <motion.h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+            <BsTools className="inline mr-2 text-green-600 dark:text-green-400" />
+            Skills & Tools
+          </motion.h2>
           <motion.div
-            key={skill}
-            className="bg-white dark:bg-gray-700 rounded-lg p-4 text-center shadow-md hover:shadow-lg"
-            whileHover={{ scale: 1.05 }}
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="absolute bottom-0 left-0 h-1 mb-2 bg-green-500 rounded-full"
+          />
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-gray-600 dark:text-gray-400 mb-10 mt-4 text-lg"
+        >
+          Technologies I{" "}
+          <span className="text-green-600 dark:text-green-400 font-medium">
+            master
+          </span>{" "}
+          to build amazing digital experiences
+        </motion.p>
+
+        {/* Animated tabs */}
+        <motion.div
+          className="flex justify-center flex-wrap gap-3 mb-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ staggerChildren: 0.1 }}
+        >
+          {tabs.map((tab) => (
+            <motion.button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium border-2 transition-all relative overflow-hidden ${
+                activeTab === tab
+                  ? "bg-gradient-to-r from-green-600 to-green-500 text-white border-transparent shadow-lg shadow-green-500/20"
+                  : "text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
+              }`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {tab}
+              {activeTab === tab && (
+                <motion.span
+                  layoutId="activeTab"
+                  className="absolute inset-0 bg-green-600 rounded-full -z-10"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+            </motion.button>
+          ))}
+        </motion.div>
+
+        {/* Animated grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, duration: 0.4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
           >
-            {skill}
+            {skillData[activeTab].map(({ icon, label }) => (
+              <motion.div
+                key={label}
+                whileHover={{
+                  y: -8,
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex flex-col items-center justify-center p-6 rounded-xl bg-white dark:bg-gray-800 hover:bg-gradient-to-br from-white to-green-50 dark:from-gray-800 dark:to-green-900/20 border border-gray-100 dark:border-gray-700 transition-all cursor-pointer relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <div className="text-5xl mb-3 text-green-600 dark:text-green-400 transition-colors">
+                  {icon}
+                </div>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {label}
+                </span>
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
+                  initial={{ scaleX: 0 }}
+                />
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
+        </AnimatePresence>
       </div>
     </section>
   );
