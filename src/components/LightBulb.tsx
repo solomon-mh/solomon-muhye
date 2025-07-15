@@ -1,7 +1,7 @@
 export const LightBulb = ({ isOn = false }) => (
   <svg
-    width="48"
-    height="64"
+    width="64"
+    height="74"
     viewBox="0 0 48 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +31,21 @@ export const LightBulb = ({ isOn = false }) => (
         strokeWidth="0.5"
       />
     </g>
+
+    {/* Cables */}
+    {isOn ? (
+      // Glowing yellow cables (ON)
+      <>
+        <path d="M20 30L24 34L28 30" stroke="#FFD700" strokeWidth="1.5" />
+        <path d="M21 28L27 28" stroke="#FFA500" strokeWidth="1" />
+      </>
+    ) : (
+      // Black cables (OFF)
+      <>
+        <path d="M20 30L24 34L28 30" stroke="#333" strokeWidth="1.5" />
+        <path d="M21 28L27 28" stroke="#444" strokeWidth="1" />
+      </>
+    )}
 
     {/* Glowing filament (only when on) */}
     {isOn && (
