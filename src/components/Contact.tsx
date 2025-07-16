@@ -1,32 +1,60 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { TypeAnimation } from "react-type-animation";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   // Enhanced typing effect with react-type-animation
-  const phrases = [
-    "Let's build something amazing together",
-    1500,
-    "Available for freelance & full-time",
-    1500,
-    "Got a project? Let's talk!",
-    1500,
-  ];
 
-  // Pigeon animation with physics
-  const [fly, setFly] = useState(false);
-  const [trigger, setTrigger] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formStatus, setFormStatus] = useState("idle"); // 'idle', 'submitting', 'success', 'error'
+  interface ContactFormData {
+    name: string;
+    email: string;
+    message: string;
+  }
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev: ContactFormData) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-  // Auto-fly every 10s
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTrigger((prev) => prev + 1);
-      setFly(true);
-      setTimeout(() => setFly(false), 2500);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    setFormStatus("submitting");
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target as HTMLFormElement,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setFormStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+        },
+        () => {
+          setFormStatus("idle");
+          toast.error("Something went wrong. Please try again later.");
+        }
+      )
+      .finally(() => {
+        setTimeout(() => {
+          setFormStatus("idle");
+        }, 2300);
+      });
+  };
 
   return (
     <section id="contact" className="relative py-28 overflow-hidden">
@@ -48,15 +76,9 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="relative inline-block mb-6"
         >
-          <motion.h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-500 dark:from-green-400 dark:to-green-300 mb-4">
+          <motion.h2 className="text-4xl font-bold text-center mb-6 text-green-600 dark:text-green-400">
             Let's Collaborate
           </motion.h2>
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: "100%" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="absolute bottom-0 left-0 h-1 bg-green-500 rounded-full"
-          />
         </motion.div>
 
         {/* Enhanced typing animation */}
@@ -64,20 +86,14 @@ const Contact = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-10 h-10"
+          className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-6"
         >
-          <TypeAnimation
-            sequence={phrases}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className="text-green-600 dark:text-green-400"
-          />
+          <p>Available for freelance & full-time.</p>
         </motion.div>
 
         {/* Social icons with floating effect */}
         <motion.div
-          className="flex justify-center gap-8 mb-12"
+          className="flex lg:hidden justify-center gap-8 mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ staggerChildren: 0.1 }}
@@ -85,17 +101,17 @@ const Contact = () => {
           {[
             {
               icon: <FaEnvelope />,
-              href: "mailto:you@example.com",
+              href: "mailto:solomon.muhye.wd@gmail.com",
               label: "Email",
             },
             {
               icon: <FaGithub />,
-              href: "https://github.com/yourprofile",
+              href: "https://github.com/solomon-mh",
               label: "GitHub",
             },
             {
               icon: <FaLinkedin />,
-              href: "https://linkedin.com/in/yourprofile",
+              href: "https://linkedin.com/in/solomonmuhye",
               label: "LinkedIn",
             },
           ].map((item, index) => (
@@ -120,73 +136,145 @@ const Contact = () => {
           ))}
         </motion.div>
 
-        {/* Premium pigeon button */}
-        <motion.div
-          className="relative inline-block"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 25px -5px rgba(16, 185, 129, 0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              setTrigger((prev) => prev + 1);
-              setFly(true);
-              setTimeout(() => setFly(false), 2500);
-            }}
-            className="relative z-10 flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-green-500/30 transition-all overflow-hidden group"
-          >
-            <span>Send Message</span>
+        {/* Animated Form */}
+        <AnimatePresence>
+          {
             <motion.div
-              animate={{
-                x: [0, 4, 0],
-                rotate: [0, 10, -10, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="mt-6 max-w-md mx-auto overflow-hidden"
             >
-              <FaPaperPlane />
-            </motion.div>
-
-            {/* Button shine effect */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -inset-y-full -left-20 w-20 bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:left-full transition-all duration-1000" />
-            </div>
-          </motion.button>
-
-          {/* Flying pigeon animation */}
-          <AnimatePresence>
-            {fly && (
-              <motion.div
-                key={trigger}
-                initial={{ x: 0, y: 0, opacity: 1, rotate: 0 }}
-                animate={{
-                  x: -400,
-                  y: -200,
-                  opacity: 0,
-                  rotate: -15,
-                }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  duration: 2,
-                  ease: [0.4, 0, 0.2, 1],
-                }}
-                className="absolute left-1/2 top-0 text-4xl -translate-x-1/2 pointer-events-none"
-                style={{ transformOrigin: "center" }}
+              <motion.form
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.2 }}
+                onSubmit={handleSubmit}
+                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700"
               >
-                🕊️
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+                {formStatus === "success" ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-8"
+                  >
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 5, -5, 0],
+                      }}
+                      transition={{ duration: 0.6 }}
+                      className="text-5xl mb-4 text-green-500"
+                    >
+                      ✉️
+                    </motion.div>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                      Message Sent!
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      I'll get back to you soon. Thanks for reaching out!
+                    </p>
+                  </motion.div>
+                ) : (
+                  <>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="mb-6"
+                    >
+                      <label
+                        htmlFor="name"
+                        className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
+                      >
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all"
+                      />
+                    </motion.div>
 
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                      className="mb-6"
+                    >
+                      <label
+                        htmlFor="email"
+                        className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
+                      >
+                        Your Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all"
+                      />
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                      className="mb-8"
+                    >
+                      <label
+                        htmlFor="message"
+                        className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
+                      >
+                        Your Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all"
+                      ></textarea>
+                    </motion.div>
+
+                    <motion.button
+                      type="submit"
+                      disabled={formStatus === "submitting"}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`w-full py-3 px-6 rounded-full font-medium text-white transition-all ${
+                        formStatus === "submitting"
+                          ? "bg-green-400 cursor-not-allowed"
+                          : "bg-gradient-to-r from-green-600 to-green-500 hover:shadow-lg hover:shadow-green-500/30"
+                      }`}
+                    >
+                      {formStatus === "submitting" ? (
+                        <motion.span
+                          animate={{ opacity: [0.6, 1, 0.6] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          Sending...
+                        </motion.span>
+                      ) : (
+                        <span>Send Message</span>
+                      )}
+                    </motion.button>
+                  </>
+                )}
+              </motion.form>
+            </motion.div>
+          }
+        </AnimatePresence>
         {/* Subtle floating dots */}
         <motion.div
           className="absolute bottom-10 left-1/4 w-2 h-2 rounded-full bg-green-500"
@@ -194,8 +282,8 @@ const Contact = () => {
             y: [0, -15, 0],
           }}
           transition={{
-            duration: 3,
-            repeat: Infinity,
+            duration: 8,
+            repeat: 4,
             ease: "easeInOut",
           }}
         />
