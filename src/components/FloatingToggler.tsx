@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { PiMoonStarsDuotone, PiSunDuotone } from "react-icons/pi";
 import { LightBulb } from "./LightBulb";
 
 const HangingToggle = () => {
@@ -25,7 +24,7 @@ const HangingToggle = () => {
   };
 
   return (
-    <div className="fixed top-0 right-10 z-50 flex flex-col items-center">
+    <div className="fixed top-0 right-10 z-50 flex flex-col items-center cursor-pointer">
       {/* Wiggly Rope using SVG */}
       <motion.svg
         width="180"
