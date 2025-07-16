@@ -1,54 +1,7 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
 import placeHolderImage from "../assets/sample.png";
-
-const projects = [
-  {
-    title: "Smart Pharmacy Finder",
-    description:
-      "A location-based pharmacy search engine with real-time availability, search history, and fuzzy logic.",
-    tech: ["React", "NestJS", "MongoDB", "Leaflet", "TailwindCSS"],
-    demoLink: "https://pharmacyfinder.example.com",
-    githubLink: "https://github.com/solomon/pharmacy-finder",
-    image: "https://via.placeholder.com/600x350?text=Smart+Pharmacy+Finder",
-  },
-  {
-    title: "Invoice Manager",
-    description:
-      "Advanced invoice creation and allocation system with budget tracking, AC/RC support, and Firebase auth.",
-    tech: ["React", "NestJS", "MongoDB", "Firebase"],
-    demoLink: "https://invoicemanager.example.com",
-    githubLink: "https://github.com/solomon/invoice-manager",
-    image: "https://via.placeholder.com/600x350?text=Invoice+Manager",
-  },
-  {
-    title: "SkillBridge Portfolio",
-    description:
-      "A premium developer portfolio with Upwork-style branding, animation, dark mode, and floating UI elements.",
-    tech: ["Next.js", "Framer Motion", "TailwindCSS"],
-    demoLink: "https://solomonportfolio.dev",
-    githubLink: "https://github.com/solomon/skillbridge-portfolio",
-    image: "https://via.placeholder.com/600x350?text=SkillBridge+Portfolio",
-  },
-  {
-    title: "Cash Flow Tracker",
-    description:
-      "Visualize, allocate, and manage cash flow through interactive dashboards and accounting logic.",
-    tech: ["React", "NestJS", "Mongoose", "Chart.js"],
-    demoLink: "https://cashflow.example.com",
-    githubLink: "https://github.com/solomon/cashflow-tracker",
-    image: "https://via.placeholder.com/600x350?text=Cash+Flow+Tracker",
-  },
-  {
-    title: "Case Study: Budget MAE System",
-    description:
-      "End-to-end financial planning system using default MAEs and budget allocation via user toggles.",
-    tech: ["React", "NestJS", "MongoDB", "Framer Motion"],
-    demoLink: "https://budgetmae.example.com",
-    githubLink: "https://github.com/solomon/budget-mae",
-    image: "https://via.placeholder.com/600x350?text=Budget+MAE+Case+Study",
-  },
-];
+import { projects } from "../data/projects";
 
 const Projects = () => {
   return (
@@ -58,12 +11,12 @@ const Projects = () => {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+          className="text-4xl font-bold text-center mb-12 text-green-600 dark:text-green-400"
         >
-          🚀 Projects
+          Projects
         </motion.h2>
 
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           {projects.map((proj, i) => (
             <motion.div
               key={proj.title}
@@ -75,7 +28,7 @@ const Projects = () => {
               <img
                 src={proj.image}
                 alt={proj.title}
-                className="w-full h-56 object-cover"
+                className="w-full h-56 object-fit"
                 onError={(e) => {
                   e.currentTarget.src = placeHolderImage;
                 }}
@@ -116,6 +69,34 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: projects.length * 0.1, duration: 0.6 }}
+            className="rounded-xl overflow-hidden shadow-xl bg-gradient-to-br from-gray-200 via-gray-300 to-green-600 dark:text-white  dark:from-gray-400 dark:via-gray-400 dark:to-green-400 flex flex-col justify-center items-center p-8 hover:scale-[1.02] transition-transform duration-300"
+          >
+            <h3 className="text-2xl font-bold mb-2 text-center">
+              <span className="flex items-center justify-center gap-4 my-2">
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+                <FaStar className="text-yellow-400" />
+              </span>
+              Your Project Goes Here
+            </h3>
+            <p className="text-center text-sm mb-4">
+              Looking for something amazing? Let’s build your next big idea
+              together.
+            </p>
+            <span className="text-xs px-3 py-1 bg-white text-green-600 font-semibold rounded">
+              Custom Full-Stack Solutions
+            </span>
+            <a
+              href="#contact"
+              className="my-4 border border-green-600 text-green-700 dark:text-white hover:bg-green-100 dark:hover:bg-gray-400 px-6 py-3 rounded-full shadow-md text-lg transition"
+            >
+              Contact Me
+            </a>{" "}
+          </motion.div>
         </div>
       </div>
     </section>
