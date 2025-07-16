@@ -4,14 +4,15 @@ import {
   FaChevronDown,
   FaGithub,
   FaLinkedin,
+  FaStar,
   FaTelegramPlane,
 } from "react-icons/fa";
 import { SiUpwork } from "react-icons/si";
 
 const texts = [
   "Full Stack Developer",
-  "React & NestJS Engineer",
-  "Building Clean UI",
+  "Freelancer",
+  "MERN stack & (Laravel + Vue)",
 ];
 
 const TYPING_SPEED = 100;
@@ -66,8 +67,8 @@ const Hero = () => {
         transition={{ duration: 1 }}
         className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight"
       >
-        Hey, I'm{" "}
-        <span className="text-green-600 dark:text-green-400">Solomon</span>
+        Hi, I'm{" "}
+        <span className="text-green-600 dark:text-green-500">Solomon</span>
       </motion.h1>
 
       {/* Typing Text */}
@@ -89,10 +90,16 @@ const Hero = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
-        className="mt-6 text-gray-700 dark:text-gray-400 text-base md:text-lg"
+        className="mt-6 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-relaxed"
       >
-        I transform ideas into clean, scalable full-stack apps with React,
-        NestJS & MongoDB. Passionate about performance and design.
+        <span className="text-green-500 italic font-semibold inline-flex items-center gap-1">
+          <FaStar className="text-yellow-400" /> Top Rated
+        </span>{" "}
+        with <span className="text-green-500 font-semibold">100%</span> client
+        satisfaction upwork freelancer. I transform ideas into clean, scalable
+        full-stack apps using React, NextJs, NodeJS, NestJS, and Laravel.
+        Passionate about performance and design, and always eager to collaborate
+        on meaningful projects.
       </motion.p>
 
       {/* CTA Buttons */}
@@ -102,12 +109,6 @@ const Hero = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.3, duration: 0.6 }}
       >
-        <a
-          href="#projects"
-          className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-md text-lg transition"
-        >
-          View Work
-        </a>
         <a
           href="#contact"
           className="bg-white dark:bg-gray-900 border border-green-600 text-green-700 dark:text-green-400 hover:bg-green-100 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-md text-lg transition"
@@ -132,7 +133,7 @@ const Hero = () => {
         transition={{ delay: 1.6, duration: 0.6 }}
       >
         <a
-          href="https://github.com/yourgithub"
+          href="https://github.com/solomon-mh"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"
@@ -141,7 +142,7 @@ const Hero = () => {
           <FaGithub size={28} />
         </a>
         <a
-          href="https://linkedin.com/in/yourlinkedin"
+          href="https://linkedin.com/in/solomonmuhye"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"
@@ -150,7 +151,7 @@ const Hero = () => {
           <FaLinkedin size={28} />
         </a>
         <a
-          href="https://t.me/yourtelegram"
+          href="https://t.me/Solomonmh"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"
