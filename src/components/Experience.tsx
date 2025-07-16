@@ -2,25 +2,32 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: "Frontend Developer",
-    company: "XYZ Tech",
-    period: "2023 – Present",
+    role: "Full-Stack Developer",
+    company: "Eagle Apps Tech",
+    period: "2024 – Present",
     details:
-      "Built modern UIs with React, TailwindCSS, and Framer Motion. Spearheaded a redesign project that boosted engagement by 30%.",
+      "Built modern UIs with React, TailwindCSS. Create Apis and implement complex backend logic using Nest.js and MongoDB and AWS for storage.",
   },
   {
     role: "Freelance Full-Stack Developer",
     company: "Upwork",
-    period: "2022 – Present",
+    period: "2023 – Present",
     details:
-      "Delivered over 10 successful freelance projects, earning $1,000+ with 5-star client satisfaction. Focused on MERN & NestJS stack.",
+      "Delivered over 5+ successful freelance projects, earning $1,000+ with 5-star client satisfaction. Focused on MERN & NestJS stack.",
+  },
+  {
+    role: "Software Engineering",
+    company: "BIT, Bahir Dar University",
+    period: "5 Years",
+    details:
+      "Completed a 5-year Software Engineering degree at BIT, Bahir Dar University. strong foundations in programming, system design, software architecture, and databases.This journey sparked my passion for creating scalable and real-world software solutions.",
   },
   {
     role: "Web Intern",
-    company: "CodeCraft Ethiopia",
+    company: "ICT4D BIT, Bahirdat University",
     period: "2021 – 2022",
     details:
-      "Assisted in developing internal tools and UI components. Learned Git workflows, REST APIs, and agile collaboration.",
+      "Developed student internship portal, using React,Django and Postgres. Customisable student internship portal that allow student to get an internship opportunity through our portal.learned and implemented Git workflows, REST APIs, and agile collaboration.",
   },
 ];
 
