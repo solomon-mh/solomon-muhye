@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* slow down react-toastify center slide animation */
+.Toastify_slide-enter {
+  animation-duration: 1s !important;
+}
+.Toastify_slide-exit {
+  animation-duration: 1s !important;
+}
