@@ -7,12 +7,10 @@ import {
   FaDocker,
   FaLaravel,
   FaAws,
-  FaFigma,
   FaVuejs,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
-  SiTypescript,
   SiPostman,
   SiVercel,
   SiMongodb,
@@ -21,60 +19,63 @@ import {
   SiRender,
   SiNetlify,
   SiNextdotjs,
+  SiFramer,
+  SiReact,
+  SiFlutter,
 } from "react-icons/si";
-import { BsTools } from "react-icons/bs";
 
-type SkillCategory = "Frontend" | "Backend" | "Tools" | "DevOps" | "Design";
+type SkillCategory = "Frontend" | "Backend" | "Tools" | "DevOps" | "MobileApps";
 type SkillItem = { icon: JSX.Element; label: string };
 type SkillData = Record<SkillCategory, SkillItem[]>;
 
 const skillData: SkillData = {
   Frontend: [
-    { icon: <FaReact className="hover:animate-spin-slow" />, label: "React" },
     {
-      icon: <SiNextdotjs className="hover:text-black dark:hover:text-white" />,
-      label: "Next.js",
-    },
-    { icon: <FaVuejs className="hover:text-[#42b883]" />, label: "Vue.js" },
-    {
-      icon: <SiTailwindcss className="hover:text-[#06b6d4]" />,
+      icon: <SiTailwindcss />,
       label: "Tailwind CSS",
     },
+    { icon: <FaReact />, label: "React" },
     {
-      icon: <SiTypescript className="hover:text-[#3178c6]" />,
-      label: "TypeScript",
+      icon: <SiNextdotjs />,
+      label: "Next.js",
+    },
+    { icon: <FaVuejs />, label: "Vue.js" },
+    {
+      icon: <SiFramer />,
+      label: "Framer Motion",
     },
   ],
   Backend: [
-    { icon: <SiNestjs className="hover:text-[#e0234e]" />, label: "NestJS" },
-    { icon: <FaNodeJs className="hover:text-[#68a063]" />, label: "Node.js" },
+    { icon: <FaNodeJs />, label: "Node.js" },
+    { icon: <SiNestjs />, label: "NestJS" },
+    { icon: <FaLaravel />, label: "Laravel" },
     {
-      icon: <SiPostgresql className="hover:text-[#336791]" />,
+      icon: <SiPostgresql />,
       label: "PostgreSQL",
     },
-    { icon: <FaLaravel className="hover:text-[#ff2d20]" />, label: "Laravel" },
-    { icon: <SiMongodb className="hover:text-[#47a248]" />, label: "MongoDB" },
+    { icon: <SiMongodb />, label: "MongoDB" },
   ],
   Tools: [
-    { icon: <FaGitAlt className="hover:text-[#f05032]" />, label: "Git" },
-    { icon: <SiPostman className="hover:text-[#ff6c37]" />, label: "Postman" },
+    { icon: <FaGitAlt />, label: "Git" },
+    { icon: <SiPostman />, label: "Postman" },
     {
-      icon: <SiVercel className="hover:text-black dark:hover:text-white" />,
+      icon: <SiVercel />,
       label: "Vercel",
     },
-    { icon: <SiNetlify className="hover:text-[#00ad9f]" />, label: "Netlify" },
-    { icon: <SiRender className="hover:text-[#46e3b7]" />, label: "Render" },
+    { icon: <SiNetlify />, label: "Netlify" },
+    { icon: <SiRender />, label: "Render" },
   ],
   DevOps: [
-    { icon: <FaDocker className="hover:text-[#2496ed]" />, label: "Docker" },
+    { icon: <FaDocker />, label: "Docker" },
     {
-      icon: <SiVercel className="hover:text-black dark:hover:text-white" />,
+      icon: <SiVercel />,
       label: "CI/CD",
     },
-    { icon: <FaAws className="hover:text-[#ff9900]" />, label: "AWS" },
+    { icon: <FaAws />, label: "AWS" },
   ],
-  Design: [
-    { icon: <FaFigma className="hover:text-[#f24e1e]" />, label: "Figma" },
+  MobileApps: [
+    { icon: <SiReact />, label: "React Native" },
+    { icon: <SiFlutter />, label: "Flutter" },
   ],
 };
 
@@ -84,7 +85,7 @@ const SkillsAndTools = () => {
   const [activeTab, setActiveTab] = useState<SkillCategory>("Frontend");
 
   return (
-    <section id="skills" className="relative py-20 overflow-hidden">
+    <section id="skills" className="relative overflow-hidden pt-12">
       {/* Animated background elements */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -97,24 +98,14 @@ const SkillsAndTools = () => {
 
       <div className="mx-auto text-center">
         {/* Animated title */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative inline-block"
+          className="text-4xl font-bold text-center mb-4 text-green-600 dark:text-green-400"
         >
-          <motion.h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            <BsTools className="inline mr-2 text-green-600 dark:text-green-400" />
-            Skills & Tools
-          </motion.h2>
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: "100%" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="absolute bottom-0 left-0 h-1 mb-2 bg-green-500 rounded-full"
-          />
-        </motion.div>
-
+          Skills and Tools
+        </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
