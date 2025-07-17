@@ -16,7 +16,7 @@ export default function App() {
       <div className="font-sans text-gray-800 dark:text-white dark:bg-gray-900 transition-colors duration-1000">
         <CursorRipple />
         <FloatingToggle />
-        <main className="lg:flex gap-12 px-12 lg:px-24">
+        <main className="lg:flex gap-12 px-6 sm:px-12 lg:px-24">
           <div className="block lg:w-1/2 h-screen lg:sticky top-0">
             <HeroSection />
           </div>
