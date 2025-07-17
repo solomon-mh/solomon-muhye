@@ -10,7 +10,7 @@ const Footer = () => {
       {/* Social Links */}
       <div className="flex justify-center gap-6 mb-4">
         <a
-          href="https://github.com/yourgithub"
+          href="https://github.com/solomon-mh"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-green-500 transition-colors"
@@ -19,7 +19,7 @@ const Footer = () => {
           <FaGithub size={22} />
         </a>
         <a
-          href="https://linkedin.com/in/yourlinkedin"
+          href="https://linkedin.com/in/solomonmuhye"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-green-500 transition-colors"
@@ -28,7 +28,7 @@ const Footer = () => {
           <FaLinkedin size={22} />
         </a>
         <a
-          href="https://t.me/yourtelegram"
+          href="https://t.me/Solomonmh"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-green-500 transition-colors"
@@ -37,7 +37,7 @@ const Footer = () => {
           <FaTelegramPlane size={22} />
         </a>
         <a
-          href="https://www.upwork.com/freelancers/~your_upwork_id"
+          href="https://www.upwork.com/freelancers/~01055c6673bf8711c5?mp_source=share"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-green-500 transition-colors"
