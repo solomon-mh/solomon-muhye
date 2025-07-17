@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
   FaChevronDown,
   FaGithub,
+  FaLink,
   FaLinkedin,
   FaStar,
   FaTelegramPlane,
@@ -90,16 +91,20 @@ const Hero = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
-        className="mt-6 text-gray-700 dark:text-gray-400 text-base md:text-lg leading-relaxed"
+        className="mt-6 text-gray-700 dark:text-gray-400 text-base md:text-l leading-relaxed"
       >
         <span className="text-green-500 italic font-semibold inline-flex items-center gap-1">
-          <FaStar className="text-yellow-400" /> Top Rated
+          <FaStar className="text-yellow-400" /> Top Rated Full-Stack Developer
         </span>{" "}
-        with <span className="text-green-500 font-semibold">100%</span> client
-        satisfaction upwork freelancer. I transform ideas into clean, scalable
-        full-stack apps using React, NextJs, NodeJS, NestJS, and Laravel.
-        Passionate about performance and design, and always eager to collaborate
-        on meaningful projects.
+        on Upwork | <span className="text-green-500 font-semibold">100%</span>{" "}
+        client satisfaction.
+        <span>
+          <br />I architect high-performance web apps for startups and
+          enterprises using React, Next.js, Node.js, Nest.js & Laravel.
+          Specializing in scalable SaaS, real-time dashboards, and RESTful APIs,
+          I blend cutting-edge tech with intuitive UX to deliver measurable
+          results.
+        </span>
       </motion.p>
 
       {/* CTA Buttons */}
@@ -123,6 +128,29 @@ const Hero = () => {
         >
           <SiUpwork size={20} /> Hire Me
         </a>
+        <motion.a
+          href="https://flowcv.com/resume/4s26k4fimci0"
+          target="_blank"
+          className="flex items-center gap-2 bg-transparent border-2 border-green-600 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-md text-lg transition"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.5, duration: 0.6 }}
+          whileHover={{
+            scale: 1.05,
+            transition: { duration: 0.2 },
+          }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <motion.span
+            animate={{
+              y: [0, -3, 0],
+              transition: { repeat: Infinity, duration: 2 },
+            }}
+          >
+            <FaLink size={20} />
+          </motion.span>
+          Resume
+        </motion.a>
       </motion.div>
 
       {/* Social Icons */}
