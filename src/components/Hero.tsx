@@ -96,14 +96,15 @@ const Hero = () => {
         <span className="text-green-500 italic font-semibold inline-flex items-center gap-1">
           <FaStar className="text-yellow-400" /> Top Rated Full-Stack Developer
         </span>{" "}
-        on Upwork | <span className="text-green-500 font-semibold">100%</span>{" "}
-        client satisfaction.
+        on Upwork |{" "}
+        <span className="text-green-500 font-semibold mb-2">100%</span> client
+        satisfaction.
         <span>
-          <br />I architect high-performance web apps for startups and
-          enterprises using React, Next.js, Node.js, Nest.js & Laravel.
-          Specializing in scalable SaaS, real-time dashboards, and RESTful APIs,
-          I blend cutting-edge tech with intuitive UX to deliver measurable
-          results.
+          <br />I help startups and enterprises transform their ideas into
+          high-performance web applications. Specializing in scalable SaaS
+          platforms, real-time analytics dashboards, and robust RESTful APIs, I
+          combine React/Next.js frontends with Node.js/Nest.js or Laravel
+          backends to deliver solutions that drive business growth.
         </span>
       </motion.p>
 
