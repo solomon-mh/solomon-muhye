@@ -9,7 +9,7 @@ export const projects = [
     description:
       "A location-based pharmacy and medication search engine with real-time availability, search history, and fuzzy logic.",
     tech: ["TailwindCSS", "React", "Laravel", "MySql", "Leaflet"],
-    demoLink: "https://pharmacyfinder.example.com",
+    demoLink: "https://github.com/solomon-mh/fetanfews",
     githubLink: "https://github.com/solomon-mh/fetanfews",
     image: "https://via.placeholder.com/600x350?text=Smart+Pharmacy+Finder",
   },
@@ -18,14 +18,14 @@ export const projects = [
     description:
       "Advanced student custom educational learning path generator with classrooms,quiz,discussions,report and analytics.",
     tech: ["Tailwindcss", "Next.Js", "MongoDB", "Firebase", "AI integration"],
-    demoLink: "https://invoicemanager.example.com",
+    demoLink: "https://github.com/solomon/invoice-manager",
     githubLink: "https://github.com/solomon/invoice-manager",
     image: customEd,
   },
   {
-    title: "ቤተሰብ hotel management system",
+    title: "ቤተሰብ room reservation",
     description:
-      "A premium developer portfolio with Upwork-style branding, animation, dark mode, and floating UI elements.",
+      "A web-based application that simplifies hotel room bookings. Users can browse hotels, book rooms, and manage reservations, while admins manage hotel details, user accounts, and booking requests.",
     tech: [
       "Tailwindcss",
       "React",
@@ -34,26 +34,28 @@ export const projects = [
       "MongoDB",
       "Node.js",
     ],
-    demoLink: "https://solomonportfolio.dev",
-    githubLink: "https://github.com/solomon/skillbridge-portfolio",
+    demoLink:
+      "https://github.com/solomon-mh/bahirdar_hotels_room_reservation_frontend",
+    githubLink:
+      "https://github.com/solomon-mh/bahirdar_hotels_room_reservation_frontend",
     image: beteseb,
-  },
-  {
-    title: "Brainwave",
-    description:
-      "Visualize, allocate, and manage cash flow through interactive dashboards and accounting logic.",
-    tech: ["Tailwindcss", "React", "Framer Motion"],
-    demoLink: "https://cashflow.example.com",
-    githubLink: "https://github.com/solomon-mh/brainwave",
-    image: brainwave,
   },
   {
     title: "JibyteEcho",
     description:
-      "End-to-end financial planning system using default MAEs and budget allocation via user toggles.",
+      "A responsive UI clone of the Jibyte AI website, featuring smooth animations and modern design. JibyteEcho mirrors the original's aesthetics with precision and attention to detail.",
     tech: ["Tailwindcss", "React", "Javascript"],
-    demoLink: "https://budgetmae.example.com",
-    githubLink: "https://github.com/solomon/budget-mae",
+    demoLink: "https://github.com/solomon-mh/ai-website-ui-clone.git",
+    githubLink: "https://github.com/solomon-mh/ai-website-ui-clone.git",
     image: jibyte,
+  },
+  {
+    title: "Brainwave",
+    description:
+      "A modern AI website landing page built with a sleek, animated UI, with parallax effect and responsive design, showcasing clean visuals and smooth user interactions",
+    tech: ["Tailwindcss", "React", "Framer Motion"],
+    demoLink: "https://github.com/solomon-mh/brainwave",
+    githubLink: "https://github.com/solomon-mh/brainwave",
+    image: brainwave,
   },
 ];
