@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type TargetAndTransition } from "framer-motion";
 import { LightBulb } from "./LightBulb";
 
 const HangingToggle = () => {
@@ -30,7 +30,7 @@ const HangingToggle = () => {
         width="180"
         height="40"
         viewBox="0 0 10 100"
-        animate={sway}
+        animate={sway as TargetAndTransition}
         className="overflow-visible"
       >
         <motion.path
@@ -44,7 +44,7 @@ const HangingToggle = () => {
 
       {/* Floating toggle icon */}
       <motion.div
-        animate={sway}
+        animate={sway as TargetAndTransition}
         whileHover={{ rotate: 5 }}
         onClick={() => setDarkMode((prev) => !prev)}
       >
