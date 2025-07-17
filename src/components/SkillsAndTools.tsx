@@ -85,7 +85,7 @@ const SkillsAndTools = () => {
   const [activeTab, setActiveTab] = useState<SkillCategory>("Frontend");
 
   return (
-    <section id="skills" className="relative overflow-hidden pt-12">
+    <section id="skills" className="relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -175,7 +175,7 @@ const SkillsAndTools = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="flex flex-col items-center justify-center p-6 rounded-xl bg-white dark:bg-gray-800 hover:bg-gradient-to-br from-white to-green-50 dark:from-gray-800 dark:to-green-900/20 border border-gray-100 dark:border-gray-700 transition-all cursor-pointer relative overflow-hidden group"
+                className="flex flex-col items-center justify-center p-6 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gradient-to-br from-white to-green-50 dark:from-gray-800 dark:to-green-900/20 border border-gray-100 dark:border-gray-700 transition-all cursor-pointer relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                 <div className="text-5xl mb-3 text-green-600 dark:text-green-400 transition-colors">
