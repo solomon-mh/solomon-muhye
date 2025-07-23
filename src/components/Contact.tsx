@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-28 overflow-hidden">
+    <section id="contact" className="relative overflow-hidden">
       {/* Decorative elements */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -144,7 +144,7 @@ const Contact = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="mt-6 max-w-md mx-auto overflow-hidden"
+              className="mt-6 max-w-xl mx-auto overflow-hidden"
             >
               <motion.form
                 initial={{ y: 20 }}
