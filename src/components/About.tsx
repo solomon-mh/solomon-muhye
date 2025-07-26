@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="relative md:pt-24">
+    <section id="about" className="relative md:pt-20">
       {/* About Text */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
@@ -20,17 +20,6 @@ const About = () => {
         >
           About Me
         </motion.h2>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-xl md:text-2xl  text-center font-medium text-gray-600 dark:text-gray-300 mb-6"
-        >
-          <p>
-            Full-Stack Developer | MERN, Next.js, NestJS & Laravel | Scalable
-            Web & Mobile Apps
-          </p>
-        </motion.div>
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
           I specialize in architecting intuitive, high-performance
           applications—from SaaS platforms to real-time dashboards—using modern
