@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  FaChevronDown,
   FaGithub,
   FaLink,
   FaLinkedin,
@@ -10,80 +8,31 @@ import {
 } from "react-icons/fa";
 import { SiUpwork } from "react-icons/si";
 
-const texts = [
-  "Full Stack Developer",
-  "Freelancer",
-  "MERN stack & (Laravel + Vue)",
-];
-
-const TYPING_SPEED = 100;
-const DELETE_SPEED = 50;
-const DELAY = 2000;
-
 const Hero = () => {
-  const [displayText, setDisplayText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = texts[index % texts.length];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (isDeleting) {
-      timeout = setTimeout(() => {
-        setDisplayText(current.substring(0, displayText.length - 1));
-      }, DELETE_SPEED);
-      if (displayText === "") {
-        setIsDeleting(false);
-        setIndex((prev) => (prev + 1) % texts.length);
-      }
-    } else {
-      timeout = setTimeout(() => {
-        setDisplayText(current.substring(0, displayText.length + 1));
-      }, TYPING_SPEED);
-      if (displayText === current) {
-        setTimeout(() => setIsDeleting(true), DELAY);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, index]);
-
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center lg:px-12"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
     >
-      {/* Animated Floating Background */}
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full bg-green-400 opacity-20 blur-3xl -z-10"
-        animate={{ y: [0, -30, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
-
       {/* Name */}
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight"
+        className="text-4xl md:text-6xl my-6 font-extrabold text-gray-900 dark:text-white"
       >
-        Hi, I'm{" "}
-        <span className="text-green-600 dark:text-green-500">Solomon</span>
-      </motion.h1>
-
-      {/* Typing Text */}
-      <motion.p
-        key={displayText}
-        className="text-xl md:text-2xl font-mono text-gray-600 dark:text-gray-300 mt-2 h-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-      >
-        {displayText}
-        <span className="text-green-500 dark:text-green-300 animate-pulse">
-          |
+        <span className="text-green-600 dark:text-green-500">
+          Solomon Muhye
         </span>
+      </motion.h1>
+      {/* Tagline */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className="md:text-lg text-gray-600 dark:text-gray-300 mt-3"
+      >
+        Building scalable, high-performance web apps for startups & businesses.
       </motion.p>
 
       {/* Subtitle */}
@@ -91,33 +40,27 @@ const Hero = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
-        className="mt-6 text-gray-700 dark:text-gray-400 text-base md:text-l leading-relaxed"
+        className="mt-6 text-gray-700 dark:text-gray-400 text-base px-4 flex flex-col sm:flex-row items-center justify-center gap-1 text-center"
       >
-        <span className="text-green-500 italic font-semibold inline-flex items-center gap-1">
-          <FaStar className="text-yellow-400" /> Top Rated Full-Stack Developer
-        </span>{" "}
-        on Upwork |{" "}
-        <span className="text-green-500 font-semibold mb-2">100%</span> client
-        satisfaction.
-        <span>
-          <br />I help startups and enterprises transform their ideas into
-          high-performance web applications. Specializing in scalable SaaS
-          platforms, real-time analytics dashboards, and robust RESTful APIs, I
-          combine React/Next.js frontends with Node.js/Nest.js or Laravel
-          backends to deliver solutions that drive business growth.
+        <span className="flex flex-col sm:flex-row items-center gap-1 text-green-500 italic font-semibold">
+          <FaStar className="text-yellow-400 mb-2" />
+          Top Rated Full-Stack Developer
+        </span>
+        <span className="text-gray-700 dark:text-gray-400 font-normal">
+          on Upwork
         </span>
       </motion.p>
 
       {/* CTA Buttons */}
       <motion.div
-        className="flex flex-wrap gap-4 mt-8"
+        className="hidden lg:flex flex-wrap gap-4 mt-10"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.3, duration: 0.6 }}
       >
         <a
           href="#contact"
-          className="bg-white dark:bg-gray-900 border border-green-600 text-green-700 dark:text-green-400 hover:bg-green-100 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-md text-lg transition"
+          className="bg-white dark:bg-gray-900 border border-green-600 text-green-700 dark:text-green-400 hover:bg-green-100 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-lg transition text-sm md:text-base"
         >
           Contact Me
         </a>
@@ -125,14 +68,14 @@ const Hero = () => {
           href="https://www.upwork.com/freelancers/~01055c6673bf8711c5?mp_source=share"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-md text-lg transition"
+          className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition text-sm md:text-base"
         >
-          <SiUpwork size={20} /> Hire Me
+          <SiUpwork size={16} /> Hire Me
         </a>
         <motion.a
           href="https://flowcv.com/resume/4s26k4fimci0"
           target="_blank"
-          className="flex items-center gap-2 bg-transparent border-2 border-green-600 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-md text-lg transition"
+          className="flex items-center gap-2 bg-transparent border-2 border-green-600 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-lg transition text-sm md:text-base"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.5, duration: 0.6 }}
@@ -148,7 +91,7 @@ const Hero = () => {
               transition: { repeat: Infinity, duration: 2 },
             }}
           >
-            <FaLink size={20} />
+            <FaLink size={16} />
           </motion.span>
           Resume
         </motion.a>
@@ -156,7 +99,7 @@ const Hero = () => {
 
       {/* Social Icons */}
       <motion.div
-        className="flex gap-6 px-4 mt-8 text-green-600 dark:text-green-400"
+        className="flex gap-8 px-4 mt-10 text-green-600 dark:text-green-400"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.6, duration: 0.6 }}
@@ -168,7 +111,7 @@ const Hero = () => {
           className="hover:scale-125 transition-transform"
           title="GitHub"
         >
-          <FaGithub size={28} />
+          <FaGithub size={30} />
         </a>
         <a
           href="https://linkedin.com/in/solomonmuhye"
@@ -177,7 +120,7 @@ const Hero = () => {
           className="hover:scale-125 transition-transform"
           title="LinkedIn"
         >
-          <FaLinkedin size={28} />
+          <FaLinkedin size={30} />
         </a>
         <a
           href="https://t.me/Solomonmh"
@@ -186,23 +129,8 @@ const Hero = () => {
           className="hover:scale-125 transition-transform"
           title="Telegram"
         >
-          <FaTelegramPlane size={28} />
+          <FaTelegramPlane size={30} />
         </a>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 10 }}
-        transition={{
-          delay: 2,
-          duration: 1.2,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className="absolute bottom-12 left-1/2 lg:hidden text-green-600 dark:text-green-400"
-      >
-        <FaChevronDown size={28} />
       </motion.div>
     </section>
   );
