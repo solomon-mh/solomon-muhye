@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import placeHolderImage from "../assets/sample.png";
 import { projects } from "../data/projects";
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 transition-colors duration-500">
+    <section id="projects" className="py-16 transition-colors duration-500">
       <div className="mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
@@ -69,7 +69,7 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: projects.length * 0.1, duration: 0.6 }}
@@ -96,7 +96,7 @@ const Projects = () => {
             >
               Contact Me
             </a>{" "}
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
