@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden mb-12">
       {/* Decorative elements */}
       <motion.div
         initial={{ opacity: 0 }}
