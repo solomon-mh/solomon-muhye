@@ -2,6 +2,7 @@ import brainwave from "../assets/brainwave.png";
 import jibyte from "../assets/jibyte.png";
 import customEd from "../assets/customEd.png";
 import beteseb from "../assets/beteseb.png";
+import mealer from "../assets/mealer.png";
 
 export const projects = [
   {
@@ -23,7 +24,7 @@ export const projects = [
     image: customEd,
   },
   {
-    title: "ቤተሰብ room reservation",
+    title: "hotelify",
     description:
       "A web-based application that simplifies hotel room bookings. Users can browse hotels, book rooms, and manage reservations, while admins manage hotel details, user accounts, and booking requests.",
     tech: [
@@ -39,6 +40,22 @@ export const projects = [
     githubLink:
       "https://github.com/solomon-mh/bahirdar_hotels_room_reservation_frontend",
     image: beteseb,
+  },
+  {
+    title: "mealer",
+    description:
+      "AI based application that helps user to generate a weekly based meal plan based on their preference. It allows user to have different subscription plans and allow them to create a customised user based Weekly meal planner based on the amount of calory intake they want. ",
+    tech: [
+      "Tailwindcss",
+      "NextJs",
+      "Typescript",
+      "FramerMotion",
+      "Clerk",
+      "Stripe",
+    ],
+    demoLink: "https://mealer-snowy.vercel.app/",
+    githubLink: "https://github.com/solomon-mh/mealer",
+    image: mealer,
   },
   {
     title: "JibyteEcho",
