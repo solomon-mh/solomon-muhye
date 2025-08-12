@@ -3,6 +3,7 @@ import jibyte from "../assets/jibyte.png";
 import customEd from "../assets/customEd.png";
 import beteseb from "../assets/beteseb.png";
 import mealer from "../assets/mealer.png";
+import mikander from "../assets/mikander.png";
 
 export const projects = [
   {
@@ -17,7 +18,7 @@ export const projects = [
   {
     title: "Personalised CustomEd",
     description:
-      "Advanced student custom educational learning path generator with classrooms,quiz,discussions,report and analytics.",
+      "Advanced LMS student custom educational learning path generator with classrooms,quiz,discussions,report and analytics.",
     tech: ["Tailwindcss", "Next.Js", "MongoDB", "Firebase", "AI integration"],
     demoLink: "https://github.com/solomon/invoice-manager",
     githubLink: "https://github.com/solomon/invoice-manager",
@@ -56,6 +57,22 @@ export const projects = [
     demoLink: "https://mealer-snowy.vercel.app/",
     githubLink: "https://github.com/solomon-mh/mealer",
     image: mealer,
+  },
+  {
+    title: "mikander",
+    description:
+      "A modern EdTech web application that integrates voice AI capabilities to provide interactive and accessible educational content, enhancing user engagement and learning effectiveness. ",
+    tech: [
+      "Tailwindcss",
+      "NextJs",
+      "Typescript",
+      "FramerMotion",
+      "Supabase",
+      "Clerk",
+    ],
+    demoLink: "https://mikander.vercel.app/",
+    githubLink: "https://github.com/solomon-mh/mikander",
+    image: mikander,
   },
   {
     title: "JibyteEcho",
