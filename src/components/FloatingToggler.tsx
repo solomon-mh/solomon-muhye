@@ -12,25 +12,32 @@ const HangingToggle = () => {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  // Sway animation shared by both rope and toggle
-  const sway = {
-    x: [-5, 5, -8, 8, -6, 6, 0],
-    rotate: [-3, 3, -2, 2, 0],
+  // Smooth swinging motion
+  const sway: TargetAndTransition = {
+    x: [-4, 4, -6, 6, -4, 4, 0],
+    rotate: [-2, 2, -1, 1, 0],
     transition: {
-      duration: 6,
+      duration: 5,
       repeat: Infinity,
+      repeatType: "mirror",
       ease: "easeInOut",
     },
   };
 
+  // Rope lags slightly behind bulb for realism
+  const ropeSway: TargetAndTransition = {
+    ...sway,
+    transition: { ...sway.transition, delay: 0.1 },
+  };
+
   return (
-    <div className="fixed top-0 right-10 z-50 flex flex-col items-center cursor-pointer">
-      {/* Wiggly Rope using SVG */}
+    <div className="fixed top-0 right-10 z-50 flex flex-col items-center cursor-pointer select-none">
+      {/* Rope */}
       <motion.svg
         width="180"
-        height="40"
+        height="30"
         viewBox="0 0 10 100"
-        animate={sway as TargetAndTransition}
+        animate={ropeSway}
         className="overflow-visible"
       >
         <motion.path
@@ -42,13 +49,29 @@ const HangingToggle = () => {
         />
       </motion.svg>
 
-      {/* Floating toggle icon */}
+      {/* Bulb */}
       <motion.div
-        animate={sway as TargetAndTransition}
-        whileHover={{ rotate: 5 }}
+        animate={sway}
+        whileHover={{ rotate: 4, scale: 1.05 }}
+        whileTap={{ scale: 0.92, rotate: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 200,
+          damping: 12,
+        }}
         onClick={() => setDarkMode((prev) => !prev)}
       >
-        {darkMode ? <LightBulb isOn={false} /> : <LightBulb isOn={true} />}
+        <motion.div
+          animate={{
+            filter: darkMode
+              ? "drop-shadow(0px 0px 0px rgba(255,255,150,0))"
+              : "drop-shadow(0px 0px 10px rgba(255,255,150,0.8))",
+            opacity: darkMode ? 0.8 : 1,
+          }}
+          transition={{ duration: 0.4 }}
+        >
+          {darkMode ? <LightBulb isOn={false} /> : <LightBulb isOn={true} />}
+        </motion.div>
       </motion.div>
     </div>
   );
