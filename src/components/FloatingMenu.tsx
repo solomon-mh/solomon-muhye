@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import {
-  HiOutlineHome, // Home (cleaner home icon)
-  HiOutlineUserCircle, // About (person outline)
-  HiOutlineCog, // Skills (gear/technical)
-  HiOutlineCode, // Projects (code brackets)
-  HiOutlineChatAlt, // Contact (speech bubble)
+  HiOutlineHome,
+  HiOutlineUserCircle,
+  HiOutlineCog,
+  HiOutlineCode,
+  HiOutlineChatAlt,
 } from "react-icons/hi";
 import { FiPlus } from "react-icons/fi";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const FloatingMenu = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -39,19 +38,23 @@ const FloatingMenu = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <motion.div
-            className={`flex items-center px-6 py-3 rounded-full shadow-2xl backdrop-blur-lg ${
+            className={`flex items-center rounded-full shadow-2xl backdrop-blur-lg ${
               isOpen
-                ? "bg-white/90 dark:bg-gray-900/90"
-                : "bg-white/70 dark:bg-black/50"
-            } border border-green-400/30 dark:border-green-400/20 space-x-2 relative overflow-hidden`}
+                ? "bg-white/90 dark:bg-gray-900/90 px-6 py-3 gap-6"
+                : "bg-white/70 dark:bg-black/50 px-3 py-3"
+            } border border-green-400/30 dark:border-green-400/20`}
             layout
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              type: "spring",
+              damping: 25,
+              stiffness: 200,
+            }}
           >
             <motion.button
-              className="flex items-center justify-center w-10 h-10 px-4 rounded-full bg-gradient-to-br from-green-400 to-green-600 text-white shadow-md"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 text-white shadow-md"
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.9 }}
               whileHover={{ scale: 1.1 }}
@@ -68,11 +71,11 @@ const FloatingMenu = () => {
             <AnimatePresence>
               {isOpen && (
                 <motion.div
-                  className="flex space-x-4"
-                  initial={{ opacity: 0, width: 0 }}
-                  animate={{ opacity: 1, width: "auto" }}
-                  exit={{ opacity: 0, width: 0 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex gap-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.03 }}
                 >
                   {menuItems.map((item) => (
                     <motion.a
@@ -87,7 +90,6 @@ const FloatingMenu = () => {
                       whileTap={{ scale: 0.95 }}
                       onHoverStart={() => setActiveItem(item.label)}
                       onHoverEnd={() => setActiveItem(null)}
-                      transition={{ duration: 0.2 }}
                     >
                       <div className="relative">
                         {item.icon}
@@ -97,39 +99,18 @@ const FloatingMenu = () => {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             exit={{ scale: 0 }}
-                            layoutId="activeIndicator"
                           />
                         )}
                       </div>
-                      <motion.span
-                        className="text-xs mt-1 font-medium"
-                        initial={{ opacity: 0, y: 5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 5 }}
-                        transition={{ delay: 0.1 }}
-                      >
+                      <span className="text-xs mt-1 font-medium">
                         {item.label}
-                      </motion.span>
+                      </span>
                     </motion.a>
                   ))}
                 </motion.div>
               )}
             </AnimatePresence>
           </motion.div>
-
-          {/* Glow effect */}
-          <motion.div
-            className="absolute inset-0 rounded-full bg-green-400/10 blur-md -z-10"
-            animate={{
-              scale: [1, 1.05, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
         </motion.div>
       )}
     </AnimatePresence>
