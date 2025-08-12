@@ -17,14 +17,8 @@ const Projects = () => {
         </motion.h2>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((proj, i) => (
-            <motion.div
-              key={proj.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="rounded-xl overflow-hidden shadow-xl bg-gray-50 dark:bg-gray-800 hover:scale-[1.02] transition-transform duration-300"
-            >
+          {projects.map((proj) => (
+            <div className="rounded-xl overflow-hidden shadow-xl bg-gray-50 dark:bg-gray-800 hover:scale-[1.02] transition-transform duration-300">
               <img
                 src={proj.image}
                 alt={proj.title}
@@ -67,9 +61,9 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-          {/* <motion.div
+          {/* <div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: projects.length * 0.1, duration: 0.6 }}
@@ -96,7 +90,7 @@ const Projects = () => {
             >
               Contact Me
             </a>{" "}
-          </motion.div> */}
+          </div> */}
         </div>
       </div>
     </section>

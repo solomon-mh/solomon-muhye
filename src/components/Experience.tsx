@@ -13,7 +13,7 @@ const experiences = [
     company: "Upwork",
     period: "2023 – Present",
     details:
-      "Delivered over 5+ successful freelance projects, earning $1,000+ with 5-star client satisfaction. Focused on MERN & NestJS stack.",
+      "Delivered over 5+ successful freelance projects, earning $1.6k+ with 5-star client satisfaction. Focused on MERN & NestJS stack.",
   },
   {
     role: "Software Engineering",
@@ -45,13 +45,7 @@ const Experience = () => {
 
       <div className="relative max-w-4xl mx-auto border-l-2 border-green-500 dark:border-green-400 pl-6">
         {experiences.map((exp, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="mb-10 group"
-          >
+          <div key={i} className="mb-10 group">
             {/* Timeline dot */}
             <div className="w-4 h-4 bg-green-500 dark:bg-green-400 rounded-full absolute -left-2.5 top-1.5 group-hover:scale-125 transition-transform" />
 
@@ -64,7 +58,7 @@ const Experience = () => {
             <p className="mt-2 text-gray-700 dark:text-gray-300">
               {exp.details}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

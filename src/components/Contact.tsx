@@ -59,43 +59,27 @@ const Contact = () => {
   return (
     <section id="contact" className="relative overflow-hidden mb-12">
       {/* Decorative elements */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.15 }}
-        className="absolute inset-0 -z-10 pointer-events-none"
-      >
+      <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-green-500 blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/3 w-40 h-40 rounded-full bg-purple-500 blur-3xl"></div>
-      </motion.div>
+      </div>
 
       <div className="text-center">
         {/* Animated title with underline */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative inline-block mb-6"
-        >
+        <div className="relative inline-block mb-6">
           <motion.h2 className="text-4xl font-bold text-center mb-6 text-green-600 dark:text-green-400">
             Let's Collaborate
           </motion.h2>
-        </motion.div>
+        </div>
 
         {/* Enhanced typing animation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-6"
-        >
+        <div className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-6">
           <p>Available for freelance & full-time.</p>
-        </motion.div>
+        </div>
 
         {/* Social icons with floating effect */}
         <motion.div
           className="flex lg:hidden justify-center gap-8 mb-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
           transition={{ staggerChildren: 0.1 }}
         >
           {[
@@ -139,13 +123,7 @@ const Contact = () => {
         {/* Animated Form */}
         <AnimatePresence>
           {
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="mt-6 max-w-xl mx-auto overflow-hidden"
-            >
+            <div className="mt-6 max-w-xl mx-auto overflow-hidden">
               <motion.form
                 initial={{ y: 20 }}
                 animate={{ y: 0 }}
@@ -154,36 +132,18 @@ const Contact = () => {
                 className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700"
               >
                 {formStatus === "success" ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-8"
-                  >
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        rotate: [0, 5, -5, 0],
-                      }}
-                      transition={{ duration: 0.6 }}
-                      className="text-5xl mb-4 text-green-500"
-                    >
-                      ✉️
-                    </motion.div>
+                  <div className="text-center py-8">
+                    <div className="text-5xl mb-4 text-green-500">✉️</div>
                     <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
                       Message Sent!
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
                       I'll get back to you soon. Thanks for reaching out!
                     </p>
-                  </motion.div>
+                  </div>
                 ) : (
                   <>
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.3 }}
-                      className="mb-6"
-                    >
+                    <div className="mb-6">
                       <label
                         htmlFor="name"
                         className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
@@ -199,14 +159,9 @@ const Contact = () => {
                         required
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all"
                       />
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.4 }}
-                      className="mb-6"
-                    >
+                    <div className="mb-6">
                       <label
                         htmlFor="email"
                         className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
@@ -222,14 +177,9 @@ const Contact = () => {
                         required
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all"
                       />
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.5 }}
-                      className="mb-8"
-                    >
+                    <div className="mb-8">
                       <label
                         htmlFor="message"
                         className="block text-left text-gray-700 dark:text-gray-300 mb-2 font-medium"
@@ -245,7 +195,7 @@ const Contact = () => {
                         rows={5}
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all"
                       ></textarea>
-                    </motion.div>
+                    </div>
 
                     <motion.button
                       type="submit"
@@ -272,7 +222,7 @@ const Contact = () => {
                   </>
                 )}
               </motion.form>
-            </motion.div>
+            </div>
           }
         </AnimatePresence>
         {/* Subtle floating dots */}

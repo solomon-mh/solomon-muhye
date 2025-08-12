@@ -52,12 +52,7 @@ const Hero = () => {
       </motion.p>
 
       {/* CTA Buttons */}
-      <motion.div
-        className="hidden lg:flex flex-wrap gap-4 mt-10"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.3, duration: 0.6 }}
-      >
+      <div className="hidden lg:flex flex-wrap gap-4 mt-10">
         <a
           href="#contact"
           className="bg-white dark:bg-gray-900 border border-green-600 text-green-700 dark:text-green-400 hover:bg-green-100 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-lg transition text-sm md:text-base"
@@ -95,15 +90,10 @@ const Hero = () => {
           </motion.span>
           Resume
         </motion.a>
-      </motion.div>
+      </div>
 
       {/* Social Icons */}
-      <motion.div
-        className="flex gap-8 px-4 mt-10 text-green-600 dark:text-green-400"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.6, duration: 0.6 }}
-      >
+      <div className="flex gap-8 px-4 mt-10 text-green-600 dark:text-green-400">
         <a
           href="https://github.com/solomon-mh"
           target="_blank"
@@ -131,7 +121,7 @@ const Hero = () => {
         >
           <FaTelegramPlane size={30} />
         </a>
-      </motion.div>
+      </div>
     </section>
   );
 };

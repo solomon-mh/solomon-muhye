@@ -5,13 +5,7 @@ const About = () => {
   return (
     <section id="about" className="relative md:pt-20">
       {/* About Text */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-        className="text-left"
-      >
+      <div className="text-left">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +36,7 @@ const About = () => {
           concepts, reviewing open-source contributions, or trail running to
           clear my mind (the best debugging happens outdoors).
         </p>
-      </motion.div>
+      </div>
     </section>
   );
 };
