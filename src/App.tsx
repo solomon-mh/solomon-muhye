@@ -9,11 +9,13 @@ import CursorRipple from "./components/CursorRipple";
 import HeroSection from "./components/Hero";
 import { Slide, ToastContainer } from "react-toastify";
 import HangingToggle from "./components/FloatingToggler";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   return (
     <>
       <div className="text-gray-800 dark:text-white dark:bg-gray-900 transition-colors duration-1000">
+        <Analytics />
         <CursorRipple />
         <HangingToggle />
         <main className="w-5/6 lg:w-1/2 mx-auto space-y-12">
