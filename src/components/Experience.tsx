@@ -24,7 +24,7 @@ const experiences = [
   },
   {
     role: "Web Intern",
-    company: "ICT4D BIT, Bahirdat University",
+    company: "ICT4D BIT, Bahirdar University",
     period: "2021 – 2022",
     details:
       "Developed student internship portal, using React,Django and Postgres. Customisable student internship portal that allow student to get an internship opportunity through our portal.learned and implemented Git workflows, REST APIs, and agile collaboration.",

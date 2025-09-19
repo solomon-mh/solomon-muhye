@@ -31,7 +31,7 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold text-green-600 dark:text-green-400">
                   {proj.title}
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mt-2 mb-4">
+                <p className="text-base text-gray-700 dark:text-gray-300 mt-2 mb-4">
                   {proj.description}
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs text-white">

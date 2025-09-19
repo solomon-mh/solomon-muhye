@@ -91,17 +91,7 @@ const FloatingMenu = () => {
                       onHoverStart={() => setActiveItem(item.label)}
                       onHoverEnd={() => setActiveItem(null)}
                     >
-                      <div className="relative">
-                        {item.icon}
-                        {activeItem === item.label && (
-                          <motion.span
-                            className="absolute -bottom-1 left-1/2 w-1 h-1 bg-green-500 rounded-full"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0 }}
-                          />
-                        )}
-                      </div>
+                      <div className="relative">{item.icon}</div>
                       <span className="text-xs mt-1 font-medium">
                         {item.label}
                       </span>

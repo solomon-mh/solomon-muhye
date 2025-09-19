@@ -15,26 +15,18 @@ const About = () => {
           About Me
         </motion.h2>
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-          I specialize in architecting intuitive, high-performance
-          applications—from SaaS platforms to real-time dashboards—using modern
-          stacks like React, Node.Js, Next.js, Nest.js, and Laravel. With a
-          relentless focus on clean code, pixel-perfect UI, and scalable APIs.
+          I&apos;m the kind of developer who wants to understand how things
+          works, not just make it work. I&apos;m always digging into the details
+          to figure out why things are the way they are, and how I can make them
+          better.
         </p>
 
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-          My mission is simple: to craft intuitive, user-first experiences that
-          solve real-world problems. Whether I’m collaborating in a team or
-          coding solo, I bring a sharp eye for detail and a love for elegant
-          design patterns that scale.
-        </p>
-
-        <p className="text-gray-700 dark:text-gray-300">
-          <span className="text-green-600 pr-2 dark:text-green-400 font-medium">
-            Beyond Code:
-          </span>
-          When I'm not architecting systems, I'm exploring quantum computing
-          concepts, reviewing open-source contributions, or trail running to
-          clear my mind (the best debugging happens outdoors).
+        <p className="text-gray-700 mt-4 dark:text-gray-300 leading-relaxed mb-4">
+          When it comes to projects, I&apos;m all about execution. I once
+          knocked out an MVP front-end in 7 days for a client, staying focused
+          and getting it done—fast and clean. If I&apos;m on something, I&apos;m
+          all in, and I make sure it gets
+          <span className="text-green-500 mx-1">done right.</span>
         </p>
       </div>
     </section>

@@ -8,9 +8,9 @@ import {
   FaLaravel,
   FaAws,
   FaVuejs,
+  FaPhp,
 } from "react-icons/fa";
 import {
-  SiTailwindcss,
   SiPostman,
   SiVercel,
   SiMongodb,
@@ -19,21 +19,29 @@ import {
   SiRender,
   SiNetlify,
   SiNextdotjs,
-  SiFramer,
   SiReact,
   SiFlutter,
+  SiNuxtdotjs,
+  SiExpress,
+  SiMysql,
 } from "react-icons/si";
 
-type SkillCategory = "Frontend" | "Backend" | "Tools" | "DevOps" | "MobileApps";
+type SkillCategory =
+  | "Frontend"
+  | "Backend"
+  | "Database"
+  | "Tools"
+  | "DevOps"
+  | "MobileApps";
 type SkillItem = { icon: JSX.Element; label: string };
 type SkillData = Record<SkillCategory, SkillItem[]>;
 
 const skillData: SkillData = {
   Frontend: [
-    {
-      icon: <SiTailwindcss />,
-      label: "Tailwind CSS",
-    },
+    // {
+    //   icon: <SiTailwindcss />,
+    //   label: "Tailwind CSS",
+    // },
     { icon: <FaReact />, label: "React" },
     {
       icon: <SiNextdotjs />,
@@ -41,19 +49,24 @@ const skillData: SkillData = {
     },
     { icon: <FaVuejs />, label: "Vue.js" },
     {
-      icon: <SiFramer />,
-      label: "Framer Motion",
+      icon: <SiNuxtdotjs />,
+      label: "Nuxt.js",
     },
   ],
   Backend: [
     { icon: <FaNodeJs />, label: "Node.js" },
+    { icon: <SiExpress />, label: "Express" },
     { icon: <SiNestjs />, label: "NestJS" },
+    { icon: <FaPhp />, label: "PHP" },
     { icon: <FaLaravel />, label: "Laravel" },
+  ],
+  Database: [
+    { icon: <SiMysql />, label: "MySQL" },
+    { icon: <SiMongodb />, label: "MongoDB" },
     {
       icon: <SiPostgresql />,
       label: "PostgreSQL",
     },
-    { icon: <SiMongodb />, label: "MongoDB" },
   ],
   Tools: [
     { icon: <FaGitAlt />, label: "Git" },
