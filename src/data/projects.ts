@@ -9,7 +9,7 @@ export const projects = [
   {
     title: "Smart Pharmacy Finder",
     description:
-      "A location-based pharmacy and medication search engine with real-time availability, search history, and fuzzy logic.",
+      "I was urgently searching for medications for my family but couldn't find them at nearby pharmacies. So this motivated me to build this website — a location-based pharmacy and medication search engine with real-time availability, search history, and fuzzy logic.",
     tech: ["TailwindCSS", "React", "Laravel", "MySql", "Leaflet"],
     demoLink: "https://github.com/solomon-mh/fetanfews",
     githubLink: "https://github.com/solomon-mh/fetanfews",

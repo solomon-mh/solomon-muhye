@@ -5,6 +5,7 @@ import {
   HiOutlineCog,
   HiOutlineCode,
   HiOutlineChatAlt,
+  HiOutlineBriefcase,
 } from "react-icons/hi";
 import { FiPlus } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
@@ -27,6 +28,7 @@ const FloatingMenu = () => {
     { icon: <HiOutlineUserCircle />, label: "About", href: "#about" },
     { icon: <HiOutlineCog />, label: "Skills", href: "#skills" },
     { icon: <HiOutlineCode />, label: "Projects", href: "#projects" },
+    { icon: <HiOutlineBriefcase />, label: "Experience", href: "#experience" },
     { icon: <HiOutlineChatAlt />, label: "Contact", href: "#contact" },
   ];
 

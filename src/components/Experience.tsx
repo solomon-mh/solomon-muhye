@@ -33,7 +33,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-2">
+    <section id="experience" className="py-2 px-8">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,21 +43,30 @@ const Experience = () => {
         Experience
       </motion.h2>
 
-      <div className="relative max-w-4xl mx-auto border-l-2 border-green-500 dark:border-green-400 pl-6">
+      <div className="relative max-w-4xl mx-auto pl-6">
+        {/* Gradient vertical line */}
+        <div
+          className="absolute left-0 top-0 h-full w-[2px] 
+               bg-gradient-to-b from-green-500 via-green-300 to-gray-50
+               dark:from-green-600 dark:via-green-300 dark:to-gray-900"
+        />
         {experiences.map((exp, i) => (
-          <div key={i} className="mb-10 group">
-            {/* Timeline dot */}
-            <div className="w-4 h-4 bg-green-500 dark:bg-green-400 rounded-full absolute -left-2.5 top-1.5 group-hover:scale-125 transition-transform" />
+          <div key={i} className="mb-16 relative group">
+            {/* Top dot */}
+            <div className="w-3.5 h-3.5 bg-green-500 dark:bg-green-400 rounded-full absolute -left-7.5 top-2 group-hover:scale-125 transition-transform" />
 
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              {exp.role}
-            </h3>
-            <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-              {exp.company} • {exp.period}
-            </span>
-            <p className="mt-2 text-gray-700 dark:text-gray-300">
-              {exp.details}
-            </p>
+            {/* Content */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                {exp.role}
+              </h3>
+              <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                {exp.company} • {exp.period}
+              </span>
+              <p className="mt-2 text-gray-700 dark:text-gray-300">
+                {exp.details}
+              </p>
+            </div>
           </div>
         ))}
       </div>
