@@ -24,9 +24,11 @@ const About = () => {
         <p className="text-gray-700 mt-4 dark:text-gray-300 leading-relaxed mb-4">
           When it comes to projects, I&apos;m all about execution. I once
           knocked out an MVP front-end in 7 days for a client, staying focused
-          and getting it done—fast and clean. If I&apos;m on something, I&apos;m
-          all in, and I make sure it gets
-          <span className="text-green-500 mx-1">done right.</span>
+          and getting it done—fast and clean.
+          <span className="block">
+            If I&apos;m on something, I&apos;m all in, and I make sure it gets
+            <span className="text-green-500 mx-1">done right.</span>{" "}
+          </span>
         </p>
       </div>
     </section>
