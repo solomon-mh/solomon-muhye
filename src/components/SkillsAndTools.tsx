@@ -1,96 +1,6 @@
-import { useState, type JSX } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaDocker,
-  FaLaravel,
-  FaAws,
-  FaVuejs,
-  FaPhp,
-} from "react-icons/fa";
-import {
-  SiPostman,
-  SiVercel,
-  SiMongodb,
-  SiNestjs,
-  SiPostgresql,
-  SiRender,
-  SiNetlify,
-  SiNextdotjs,
-  SiReact,
-  SiFlutter,
-  SiNuxtdotjs,
-  SiExpress,
-  SiMysql,
-} from "react-icons/si";
-
-type SkillCategory =
-  | "Frontend"
-  | "Backend"
-  | "Database"
-  | "Tools"
-  | "DevOps"
-  | "MobileApps";
-type SkillItem = { icon: JSX.Element; label: string };
-type SkillData = Record<SkillCategory, SkillItem[]>;
-
-const skillData: SkillData = {
-  Frontend: [
-    // {
-    //   icon: <SiTailwindcss />,
-    //   label: "Tailwind CSS",
-    // },
-    { icon: <FaReact />, label: "React" },
-    {
-      icon: <SiNextdotjs />,
-      label: "Next.js",
-    },
-    { icon: <FaVuejs />, label: "Vue.js" },
-    {
-      icon: <SiNuxtdotjs />,
-      label: "Nuxt.js",
-    },
-  ],
-  Backend: [
-    { icon: <FaNodeJs />, label: "Node.js" },
-    { icon: <SiExpress />, label: "Express" },
-    { icon: <SiNestjs />, label: "NestJS" },
-    { icon: <FaPhp />, label: "PHP" },
-    { icon: <FaLaravel />, label: "Laravel" },
-  ],
-  Database: [
-    { icon: <SiMysql />, label: "MySQL" },
-    { icon: <SiMongodb />, label: "MongoDB" },
-    {
-      icon: <SiPostgresql />,
-      label: "PostgreSQL",
-    },
-  ],
-  Tools: [
-    { icon: <FaGitAlt />, label: "Git" },
-    { icon: <SiPostman />, label: "Postman" },
-    {
-      icon: <SiVercel />,
-      label: "Vercel",
-    },
-    { icon: <SiNetlify />, label: "Netlify" },
-    { icon: <SiRender />, label: "Render" },
-  ],
-  DevOps: [
-    { icon: <FaDocker />, label: "Docker" },
-    {
-      icon: <SiVercel />,
-      label: "CI/CD",
-    },
-    { icon: <FaAws />, label: "AWS" },
-  ],
-  MobileApps: [
-    { icon: <SiReact />, label: "React Native" },
-    { icon: <SiFlutter />, label: "Flutter" },
-  ],
-};
+import { skillData, type SkillCategory } from "./SkillsList";
 
 const tabs: SkillCategory[] = Object.keys(skillData) as SkillCategory[];
 
@@ -98,7 +8,7 @@ const SkillsAndTools = () => {
   const [activeTab, setActiveTab] = useState<SkillCategory>("Frontend");
 
   return (
-    <section id="skills" className="relative overflow-hidden">
+    <section id="skills" className="relative scroll-mt-12">
       {/* Animated background elements */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -119,18 +29,6 @@ const SkillsAndTools = () => {
         >
           Skills and Tools
         </motion.h2>
-        {/* <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-gray-600 dark:text-gray-400 mb-10 mt-4 text-lg"
-        >
-          Technologies I{" "}
-          <span className="text-green-600 dark:text-green-400 font-medium">
-            master
-          </span>{" "}
-          to build amazing digital experiences
-        </motion.p> */}
 
         {/* Animated tabs */}
         <motion.div
