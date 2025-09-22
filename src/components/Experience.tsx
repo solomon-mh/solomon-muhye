@@ -13,7 +13,7 @@ const experiences = [
     company: "Upwork",
     period: "2023 – Present",
     details:
-      "Delivered over 5+ successful freelance projects, earning $1.6k+ with 5-star client satisfaction. Focused on MERN & NestJS stack.",
+      "Delivered 5+ successful freelance projects, earning $2k+ with 5-star client satisfaction. Built scalable apps using MERN/V stack, Next.js, Nuxt.js, and NestJS.",
   },
   {
     role: "Software Engineering",
@@ -25,15 +25,15 @@ const experiences = [
   {
     role: "Web Intern",
     company: "ICT4D BIT, Bahirdar University",
-    period: "2021 – 2022",
+    period: "3 months",
     details:
-      "Developed student internship portal, using React,Django and Postgres. Customisable student internship portal that allow student to get an internship opportunity through our portal.learned and implemented Git workflows, REST APIs, and agile collaboration.",
+      "Developed student internship portal, using React,Django and Postgres. Customisable student internship portal that allow student to get an internship opportunity through our portal. Learned and implemented Git workflows, REST APIs, and agile collaboration.",
   },
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-2 px-8">
+    <section id="experience" className="py-2 px-8 scroll-mt-16">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

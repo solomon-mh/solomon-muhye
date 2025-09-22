@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="relative md:pt-20">
+    <section id="about" className="relative scroll-mt-16">
       {/* About Text */}
       <div className="text-left">
         <motion.h2

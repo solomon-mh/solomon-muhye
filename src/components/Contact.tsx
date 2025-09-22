@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden mb-12">
+    <section id="contact" className="relative scroll-mt-16 mb-12">
       {/* Decorative elements */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-green-500 blur-3xl"></div>
