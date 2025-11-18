@@ -25,7 +25,7 @@ export const projects = [
     image: customEd,
   },
   {
-    title: "hotelify",
+    title: "beteseb",
     description:
       "A web-based application that simplifies hotel room bookings. Users can browse hotels, book rooms, and manage reservations, while admins manage hotel details, user accounts, and booking requests.",
     tech: [
