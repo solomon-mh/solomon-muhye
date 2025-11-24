@@ -4,10 +4,8 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaDocker,
-  FaLaravel,
   FaAws,
   FaVuejs,
-  FaPhp,
 } from "react-icons/fa";
 import {
   SiPostman,
@@ -19,7 +17,6 @@ import {
   SiNetlify,
   SiNextdotjs,
   SiReact,
-  SiFlutter,
   SiNuxtdotjs,
   SiExpress,
   SiMysql,
@@ -33,61 +30,127 @@ export type SkillCategory =
   | "DevOps"
   | "MobileApps";
 
-type SkillItem = { icon: JSX.Element; label: string };
+type SkillItem = { icon: JSX.Element; label: string; description: string };
 type SkillData = Record<SkillCategory, SkillItem[]>;
 
 export const skillData: SkillData = {
   Frontend: [
-    // {
-    //   icon: <SiTailwindcss />,
-    //   label: "Tailwind CSS",
-    // },
-    { icon: <FaReact />, label: "React" },
+    {
+      icon: <FaReact />,
+      label: "React",
+      description: "#Hooks #ContextAPI #SPA #StateManagement #Performance",
+    },
     {
       icon: <SiNextdotjs />,
       label: "Next.js",
+      description:
+        "#SSR #SSG #ISR #APIroutes #Middleware #PerformanceOptimization",
     },
-    { icon: <FaVuejs />, label: "Vue.js" },
+    {
+      icon: <FaVuejs />,
+      label: "Vue.js",
+      description: "#CompositionAPI #Vuex #SPA #Components #MaintainableCode",
+    },
     {
       icon: <SiNuxtdotjs />,
       label: "Nuxt.js",
+      description: "#SSR #SSG #ModularArchitecture #Vue #EnterpriseApps",
     },
   ],
   Backend: [
-    { icon: <FaNodeJs />, label: "Node.js" },
-    { icon: <SiExpress />, label: "Express" },
-    { icon: <SiNestjs />, label: "NestJS" },
-    { icon: <FaPhp />, label: "PHP" },
-    { icon: <FaLaravel />, label: "Laravel" },
+    {
+      icon: <FaNodeJs />,
+      label: "Node.js",
+      description:
+        "#EventLoop #NonBlockingIO #Streams #Clustering #HighPerformance",
+    },
+    {
+      icon: <SiExpress />,
+      label: "Express",
+      description:
+        "#RESTAPI #Middleware #Routing #ErrorHandling #ScalableBackend",
+    },
+    {
+      icon: <SiNestjs />,
+      label: "NestJS",
+      description:
+        "#TypeScript #DependencyInjection #ModularArchitecture #Testing #EnterpriseBackend",
+    },
   ],
   Database: [
-    { icon: <SiMysql />, label: "MySQL" },
-    { icon: <SiMongodb />, label: "MongoDB" },
+    {
+      icon: <SiMysql />,
+      label: "MySQL",
+      description:
+        "#RelationalDB #SQL #Transactions #Indexing #QueryOptimization",
+    },
+    {
+      icon: <SiMongodb />,
+      label: "MongoDB",
+      description:
+        "#NoSQL #DocumentDB #Aggregation #Sharding #PerformanceTuning",
+    },
     {
       icon: <SiPostgresql />,
       label: "PostgreSQL",
+      description:
+        "#AdvancedSQL #JSONB #FullTextSearch #Indexing #DataIntegrity",
     },
   ],
   Tools: [
-    { icon: <FaGitAlt />, label: "Git" },
-    { icon: <SiPostman />, label: "Postman" },
+    {
+      icon: <FaGitAlt />,
+      label: "Git",
+      description:
+        "#VersionControl #Branching #Rebase #MergeConflicts #Collaboration",
+    },
+    {
+      icon: <SiPostman />,
+      label: "Postman",
+      description:
+        "#APItesting #Automation #Collections #EnvironmentManagement",
+    },
     {
       icon: <SiVercel />,
       label: "Vercel",
+      description: "#Serverless #EdgeFunctions #Deployment #Performance",
     },
-    { icon: <SiNetlify />, label: "Netlify" },
-    { icon: <SiRender />, label: "Render" },
+    {
+      icon: <SiNetlify />,
+      label: "Netlify",
+      description: "#Jamstack #CI/CD #StaticHosting #EdgeFunctions",
+    },
+    {
+      icon: <SiRender />,
+      label: "Render",
+      description:
+        "#CloudDeployment #AutoScaling #WebServices #HighAvailability",
+    },
   ],
   DevOps: [
-    { icon: <FaDocker />, label: "Docker" },
+    {
+      icon: <FaDocker />,
+      label: "Docker",
+      description:
+        "#Containerization #Compose #MultiStageBuilds #ProductionOptimization",
+    },
     {
       icon: <SiVercel />,
       label: "CI/CD",
+      description: "#PipelineAutomation #Testing #Security #Deployment",
     },
-    { icon: <FaAws />, label: "AWS" },
+    {
+      icon: <FaAws />,
+      label: "AWS",
+      description: "#EC2 #S3 #Lambda #AutoScaling #CloudSecurity",
+    },
   ],
   MobileApps: [
-    { icon: <SiReact />, label: "React Native" },
-    { icon: <SiFlutter />, label: "Flutter" },
+    {
+      icon: <SiReact />,
+      label: "React Native",
+      description:
+        "#CrossPlatform #NativeModules #Performance #GestureHandling #MobileApps",
+    },
   ],
 };
