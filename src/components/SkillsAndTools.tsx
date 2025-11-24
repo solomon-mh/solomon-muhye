@@ -35,7 +35,7 @@ const SkillsAndTools = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 flex-col gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-6 max-w-6xl mx-auto">
           {skillData[activeTab].map(({ label, description }) => (
             <div
               key={label}
