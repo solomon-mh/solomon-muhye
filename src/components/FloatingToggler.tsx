@@ -31,7 +31,7 @@ const HangingToggle = () => {
   };
 
   return (
-    <div className="fixed top-0 right-10 z-50 flex flex-col items-center cursor-pointer select-none">
+    <div className="fixed top-0 right-0 md:right-10 z-50 flex flex-col items-center cursor-pointer select-none">
       {/* Rope */}
       <motion.svg
         width="180"
