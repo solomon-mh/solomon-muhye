@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+      className="relative pt-24 pb-12 md:bp-0 md:py-0 md:min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
     >
       {/* Name */}
       <motion.h1
