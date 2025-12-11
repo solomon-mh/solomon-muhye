@@ -34,23 +34,20 @@ const Hero = () => {
       >
         Building scalable, high-performance web apps for startups & businesses.
       </motion.p>
-
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
         className="mt-6 text-gray-700 dark:text-gray-400 text-base px-4 flex flex-col sm:flex-row items-center justify-center gap-1 text-center"
       >
-        <span className="flex flex-col sm:flex-row items-center gap-1 text-green-500 italic font-semibold">
+        {/* <span className="flex flex-col sm:flex-row items-center gap-1 text-green-500 italic font-semibold">
           <FaStar className="text-yellow-400 mb-2" />
           Top Rated Full-Stack Developer
-        </span>
-        <span className="text-gray-700 dark:text-gray-400 font-normal">
+        </span> */}
+        {/* <span className="text-gray-700 dark:text-gray-400 font-normal">
           on Upwork
-        </span>
+        </span> */}
       </motion.p>
-
       {/* CTA Buttons */}
       <div className="hidden lg:flex flex-wrap gap-4 mt-10">
         <a
@@ -91,7 +88,6 @@ const Hero = () => {
           Resume
         </motion.a>
       </div>
-
       {/* Social Icons */}
       <div className="flex gap-8 px-4 mt-10 text-green-600 dark:text-green-400">
         <a
