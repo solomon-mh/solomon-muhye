@@ -3,10 +3,10 @@ import {
   FaGithub,
   FaLink,
   FaLinkedin,
-  FaStar,
+  // FaStar,
   FaTelegramPlane,
 } from "react-icons/fa";
-import { SiUpwork } from "react-icons/si";
+// import { SiUpwork } from "react-icons/si";
 
 const Hero = () => {
   return (
