@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
-import { SiUpwork } from "react-icons/si";
+// import { SiUpwork } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -36,7 +36,7 @@ const Footer = () => {
         >
           <FaTelegramPlane size={22} />
         </a>
-        <a
+        {/* <a
           href="https://www.upwork.com/freelancers/~01055c6673bf8711c5?mp_source=share"
           target="_blank"
           rel="noopener noreferrer"
@@ -44,7 +44,7 @@ const Footer = () => {
           title="Upwork"
         >
           <SiUpwork size={22} />
-        </a>
+        </a> */}
       </div>
 
       {/* Footer Text */}

@@ -42,31 +42,31 @@ const Hero = () => {
         transition={{ delay: 1, duration: 1 }}
         className="mt-6 text-gray-700 dark:text-gray-400 text-base px-4 flex flex-col sm:flex-row items-center justify-center gap-1 text-center"
       >
-        <span className="flex flex-col sm:flex-row items-center gap-1 text-green-500 italic font-semibold">
+        {/* <span className="flex flex-col sm:flex-row items-center gap-1 text-green-500 italic font-semibold">
           <FaStar className="text-yellow-400 mb-2" />
           Top Rated Full-Stack Developer
         </span>
         <span className="text-gray-700 dark:text-gray-400 font-normal">
           on Upwork
-        </span>
+        </span> */}
       </motion.p>
 
       {/* CTA Buttons */}
-      <div className="hidden lg:flex flex-wrap gap-4 mt-10">
+      <div className="flex flex-wrap gap-4 mt-10">
         <a
           href="#contact"
           className="bg-white dark:bg-gray-900 border border-green-600 text-green-700 dark:text-green-400 hover:bg-green-100 dark:hover:bg-gray-800 px-6 py-3 rounded-full shadow-lg transition text-sm md:text-base"
         >
           Contact Me
         </a>
-        <a
+        {/* <a
           href="https://www.upwork.com/freelancers/~01055c6673bf8711c5?mp_source=share"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition text-sm md:text-base"
         >
           <SiUpwork size={16} /> Hire Me
-        </a>
+        </a> */}
         <motion.a
           href="https://flowcv.com/resume/4s26k4fimci0"
           target="_blank"

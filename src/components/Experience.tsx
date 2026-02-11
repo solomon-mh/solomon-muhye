@@ -13,7 +13,7 @@ const experiences = [
     company: "Upwork",
     period: "2023 – Present",
     details:
-      "Delivered 5+ successful freelance projects, earning $2k+ with 5-star client satisfaction. Built scalable apps using MERN/V stack, Next.js, Nuxt.js, and NestJS.",
+      "Delivered 10+ successful freelance projects, earning $8k+ with 5-star client satisfaction. Built scalable apps using MERN/V stack, Next.js, Nuxt.js, and NestJS.",
   },
   {
     role: "Software Engineering",
