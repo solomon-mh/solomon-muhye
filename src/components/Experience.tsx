@@ -16,6 +16,13 @@ const experiences = [
       "Delivered 10+ successful freelance projects, earning $8k+ with 5-star client satisfaction. Built scalable apps using MERN/V stack, Next.js, Nuxt.js, and NestJS.",
   },
   {
+    role: "LLM Trainer on Upwork",
+    company: "Upwork",
+    period: "2026",
+    details:
+      "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing.",
+  },
+  {
     role: "Software Engineering",
     company: "BIT, Bahir Dar University",
     period: "5 Years",
