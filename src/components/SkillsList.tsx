@@ -6,6 +6,7 @@ import {
   FaDocker,
   FaAws,
   FaVuejs,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiPostman,
@@ -75,6 +76,12 @@ export const skillData: SkillData = {
       label: "NestJS",
       description:
         "#TypeScript #DependencyInjection #ModularArchitecture #Testing #EnterpriseBackend",
+    },
+    {
+      icon: <FaPython />,
+      label: "Python (Flask/FastAPI)",
+      description:
+        "#RESTAPI #Microservices #Asynchronous #LLMIntegration #ScalablePython",
     },
   ],
   Database: [

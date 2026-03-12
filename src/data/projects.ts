@@ -92,4 +92,12 @@ export const projects = [
     githubLink: "https://github.com/solomon-mh/brainwave",
     image: brainwave,
   },
+  {
+    title: "LLM Trainer on Upwork",
+    description:
+      "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing.",
+    tech: ["Python", "scripting"],
+    demoLink: "",
+    githubLink: "",
+  },
 ];
