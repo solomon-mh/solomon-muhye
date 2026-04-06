@@ -21,9 +21,9 @@ export default function App() {
         <main className="w-5/6 lg:w-1/2 mx-auto space-y-12">
           <HeroSection />
           <About />
+          <Experience />
           <SkillsAndTools />
           <Projects />
-          <Experience />
           <Contact />
         </main>
         <FloatingMenu />

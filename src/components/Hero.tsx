@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLink,
-  FaLinkedin,
-  // FaStar,
-  FaTelegramPlane,
-} from "react-icons/fa";
-// import { SiUpwork } from "react-icons/si";
+import { FaGithub, FaLink, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -19,7 +12,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-4xl md:text-6xl my-6 font-extrabold text-gray-900 dark:text-white"
+        className="text-4xl md:text-6xl my-6 mb-2 font-extrabold text-gray-900 dark:text-white"
       >
         <span className="text-green-600 dark:text-green-500">
           Solomon Muhye
@@ -32,7 +25,7 @@ const Hero = () => {
         transition={{ delay: 0.3 }}
         className="md:text-lg text-gray-600 dark:text-gray-300 mt-3"
       >
-        Building scalable, high-performance web apps for startups & businesses.
+        Senior Frontend Developer & AI/ML Engineer.
       </motion.p>
 
       {/* Subtitle */}
@@ -42,13 +35,11 @@ const Hero = () => {
         transition={{ delay: 1, duration: 1 }}
         className="mt-6 text-gray-700 dark:text-gray-400 text-base px-4 flex flex-col sm:flex-row items-center justify-center gap-1 text-center"
       >
-        {/* <span className="flex flex-col sm:flex-row items-center gap-1 text-green-500 italic font-semibold">
-          <FaStar className="text-yellow-400 mb-2" />
-          Top Rated Full-Stack Developer
-        </span>
         <span className="text-gray-700 dark:text-gray-400 font-normal">
-          on Upwork
-        </span> */}
+          I worked on websites for international clients, making them beautiful,
+          efficient, and scalable, and trained AI efficiently, as I did in
+          Upwork’s Human+Agent Productivity Index (HAPI).
+        </span>
       </motion.p>
 
       {/* CTA Buttons */}
@@ -59,14 +50,6 @@ const Hero = () => {
         >
           Contact Me
         </a>
-        {/* <a
-          href="https://www.upwork.com/freelancers/~01055c6673bf8711c5?mp_source=share"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition text-sm md:text-base"
-        >
-          <SiUpwork size={16} /> Hire Me
-        </a> */}
         <motion.a
           href="https://flowcv.com/resume/4s26k4fimci0"
           target="_blank"
@@ -113,7 +96,7 @@ const Hero = () => {
           <FaLinkedin size={30} />
         </a>
         <a
-          href="https://t.me/Solomonmh"
+          href="https://t.me/solomon_muhye"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"

@@ -47,7 +47,7 @@ const Experience = () => {
         transition={{ duration: 0.6 }}
         className="text-4xl font-bold text-center mb-12 text-green-600 dark:text-green-400"
       >
-        Experience
+        Professional Experience
       </motion.h2>
 
       <div className="relative max-w-4xl mx-auto pl-6">

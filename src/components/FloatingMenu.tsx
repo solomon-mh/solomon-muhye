@@ -17,7 +17,15 @@ const FloatingMenu = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 100);
+
+      // Auto-expand menu when scrolling past 250px
+      if (scrollY > 250) {
+        setIsOpen(true);
+      } else if (scrollY < 100) {
+        setIsOpen(false);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
