@@ -34,9 +34,9 @@ const FloatingMenu = () => {
   const menuItems = [
     { icon: <HiOutlineHome />, label: "Home", href: "#hero" },
     { icon: <HiOutlineUserCircle />, label: "About", href: "#about" },
+    { icon: <HiOutlineBriefcase />, label: "Experience", href: "#experience" },
     { icon: <HiOutlineCog />, label: "Skills", href: "#skills" },
     { icon: <HiOutlineCode />, label: "Projects", href: "#projects" },
-    { icon: <HiOutlineBriefcase />, label: "Experience", href: "#experience" },
     { icon: <HiOutlineChatAlt />, label: "Contact", href: "#contact" },
   ];
 
