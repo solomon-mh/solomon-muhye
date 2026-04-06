@@ -9,7 +9,7 @@ const SkillsAndTools = () => {
   return (
     <section
       id="skills"
-      className="relative scroll-mt-12 pt-16 bg-gray-50 dark:bg-gray-900"
+      className="relative scroll-mt-12 bg-gray-50 dark:bg-gray-900"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Title */}
