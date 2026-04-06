@@ -21,7 +21,10 @@ import {
   SiNuxtdotjs,
   SiExpress,
   SiMysql,
+  SiOpenai,
+  SiPytorch,
 } from "react-icons/si";
+import { GiBrain } from "react-icons/gi";
 
 export type SkillCategory =
   | "Frontend"
@@ -29,7 +32,8 @@ export type SkillCategory =
   | "Database"
   | "Tools"
   | "DevOps"
-  | "MobileApps";
+  | "MobileApps"
+  | "AI_ML";
 
 type SkillItem = { icon: JSX.Element; label: string; description: string };
 type SkillData = Record<SkillCategory, SkillItem[]>;
@@ -158,6 +162,24 @@ export const skillData: SkillData = {
       label: "React Native",
       description:
         "#CrossPlatform #NativeModules #Performance #GestureHandling #MobileApps",
+    },
+  ],
+  AI_ML: [
+    {
+      icon: <SiOpenai />,
+      label: "Generative AI & LLMs",
+      description: "#GPT-4 #Claude #PromptEngineering #RAG #AI-Integration",
+    },
+    {
+      icon: <GiBrain />,
+      label: "LLM Training & RLHF",
+      description: "#FineTuning #DataCuration #RewardModeling #HAPI #RLHF",
+    },
+    {
+      icon: <SiPytorch />,
+      label: "AI Frameworks",
+      description:
+        "#PyTorch #TensorFlow #LangChain #DeepLearning #NeuralNetworks",
     },
   ],
 };

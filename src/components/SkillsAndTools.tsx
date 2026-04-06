@@ -29,7 +29,11 @@ const SkillsAndTools = () => {
                   : "border-transparent text-gray-600 dark:text-gray-400 hover:border-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
               }`}
             >
-              {tab}
+              {tab === "AI_ML"
+                ? "AI & ML"
+                : tab === "MobileApps"
+                  ? "Mobile Apps"
+                  : tab}
             </button>
           ))}
         </div>

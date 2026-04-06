@@ -3,38 +3,86 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     role: "Full-Stack Developer",
-    company: "Eagle Apps Tech",
-    period: "2024 – Present",
+    company: "Eagle Tech Apps",
+    period: "2023 – 2026",
     details:
-      "Built modern UIs with React, TailwindCSS. Create Apis and implement complex backend logic using Nest.js and MongoDB and AWS for storage.",
+      "Built modern UIs with React, TailwindCSS. Created APIs and implemented complex backend logic using Nest.js and MongoDB and AWS for storage.",
+    projects: [
+      {
+        name: "SaaS Enterprise ERP",
+        description: "Real-time resource management platform.",
+      },
+      {
+        name: "Global E-commerce Dashboard",
+        description: "High-performance analytics for vendors.",
+      },
+    ],
   },
   {
     role: "Freelance Full-Stack Developer",
     company: "Upwork",
     period: "2023 – Present",
     details:
-      "Delivered 10+ successful freelance projects, earning $8k+ with 5-star client satisfaction. Built scalable apps using MERN/V stack, Next.js, Nuxt.js, and NestJS.",
+      "Delivered 10+ successful freelance projects with consistent 5-star client satisfaction. Built scalable apps using MERN/V stack, Next.js, Nuxt.js, and NestJS.",
+    projects: [
+      {
+        name: "Batjet - Financial Management Systems",
+        description:
+          "AI-powered financial management system for businesses located in Italy.",
+      },
+      {
+        name: "PMS - Property Management System",
+        description:
+          "Real-time hotel booking and management system for hotels, flights, and tours located in Australia.",
+      },
+    ],
   },
   {
     role: "LLM Trainer on Upwork",
     company: "Upwork",
     period: "2026",
     details:
-      "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing.",
+      "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing. Worked on Upwork’s Human+Agent Productivity Index (HAPI).",
+    projects: [
+      {
+        name: "HAPI",
+        description: "Measuring human-agent synergy in productivity.",
+      },
+      {
+        name: "RLHF Data Pipeline",
+        description: "Curation for reinforcement learning from human feedback.",
+      },
+    ],
   },
   {
     role: "Software Engineering",
     company: "BIT, Bahir Dar University",
     period: "5 Years",
     details:
-      "Completed a 5-year Software Engineering degree at BIT, Bahir Dar University. strong foundations in programming, system design, software architecture, and databases.This journey sparked my passion for creating scalable and real-world software solutions.",
+      "Completed a 5-year Software Engineering degree. Strong foundations in programming, system design, software architecture, and databases.",
+    projects: [
+      {
+        name: "Fetanfews - Pharmacy Locator",
+        description: "Location-based real-time medicine availability search.",
+      },
+      {
+        name: "Mikander - Voice AI EdTech",
+        description: "Interactive voice-enabled education platform.",
+      },
+    ],
   },
   {
     role: "Web Intern",
     company: "ICT4D BIT, Bahirdar University",
     period: "3 months",
     details:
-      "Developed student internship portal, using React,Django and Postgres. Customisable student internship portal that allow student to get an internship opportunity through our portal. Learned and implemented Git workflows, REST APIs, and agile collaboration.",
+      "Developed a student internship portal using React, Django, and Postgres. Customizable system enabling students to secure internship opportunities.",
+    projects: [
+      {
+        name: "Internship Portal",
+        description: "Streamlined workflow for university placement.",
+      },
+    ],
   },
 ];
 
@@ -73,6 +121,29 @@ const Experience = () => {
               <p className="mt-2 text-gray-700 dark:text-gray-300">
                 {exp.details}
               </p>
+
+              {/* Projects */}
+              {exp.projects && exp.projects.length > 0 && (
+                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {exp.projects.map((project, idx) => (
+                    <motion.div
+                      key={idx}
+                      whileHover={{ y: -3 }}
+                      className="p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-green-500/10 dark:border-green-400/10 shadow-sm backdrop-blur-sm group/project"
+                    >
+                      <h4 className="text-sm font-bold text-green-600 dark:text-green-400 flex items-center gap-1">
+                        {project.name}
+                        <span className="opacity-0 group-hover/project:opacity-100 transition-opacity text-xs">
+                          ↗
+                        </span>
+                      </h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
+                        {project.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ))}
