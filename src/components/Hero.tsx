@@ -25,7 +25,7 @@ const Hero = () => {
         transition={{ delay: 0.3 }}
         className="md:text-lg text-gray-600 dark:text-gray-300 mt-3"
       >
-        Senior Frontend Developer & AI/ML Engineer.
+        Senior Fullstack Developer & AI/ML Engineer.
       </motion.p>
 
       {/* Subtitle */}
@@ -36,9 +36,9 @@ const Hero = () => {
         className="mt-6 text-gray-700 dark:text-gray-400 text-base px-4 flex flex-col sm:flex-row items-center justify-center gap-1 text-center"
       >
         <span className="text-gray-700 dark:text-gray-400 font-normal">
-          I worked on websites for international clients, making them beautiful,
-          efficient, and scalable, and trained AI efficiently, as I did in
-          Upwork’s Human+Agent Productivity Index (HAPI).
+          I build websites and mobile apps for international clients, making
+          them beautiful, efficient, and scalable, and trained AI efficiently,
+          as I did in Upwork’s Human+Agent Productivity Index (HAPI).
         </span>
       </motion.p>
 
