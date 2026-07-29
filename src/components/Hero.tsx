@@ -38,7 +38,7 @@ const Hero = () => {
         <span className="text-gray-700 dark:text-gray-400 font-normal">
           I build websites and mobile apps for international clients, making
           them beautiful, efficient, and scalable, and trained AI efficiently,
-          as I did in Upwork’s Human+Agent Productivity Index (HAPI).
+          as I did in Turing’s Human+Agent Productivity Index (HAPI).
         </span>
       </motion.p>
 

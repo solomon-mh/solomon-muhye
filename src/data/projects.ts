@@ -20,8 +20,7 @@ export const projects = [
     description:
       "Advanced LMS student custom educational learning path generator with classrooms,quiz,discussions,report and analytics.",
     tech: ["Tailwindcss", "Next.Js", "MongoDB", "Firebase", "AI integration"],
-    demoLink: "https://github.com/solomon/invoice-manager",
-    githubLink: "https://github.com/solomon/invoice-manager",
+    githubLink: "https://github.com/JES-Org/SEM2-PLP-frontend",
     image: customEd,
   },
   {

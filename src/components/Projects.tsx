@@ -20,7 +20,7 @@ const Projects = () => {
     <section id="projects" className="py-20">
       <div className="px-4">
         <h2 className="text-4xl font-extrabold text-green-600 dark:text-green-400 text-center mb-16">
-          Projects
+          Personal Projects
         </h2>
 
         <div className="relative pl-10">

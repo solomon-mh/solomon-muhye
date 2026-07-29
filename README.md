@@ -85,7 +85,7 @@ Sleek, animated AI website landing page with parallax effects.
 
 - **Full-Stack Developer @ Eagle Apps Tech** (2024 – Present)
   - Building modern UIs with React/TailwindCSS and complex backends with NestJS/MongoDB/AWS.
-- **Freelance Full-Stack Developer @ Upwork** (2023 – Present)
+- **Freelance Full-Stack Developer @ Self-Employed** (2023 – Present)
   - Delivered 10+ successful projects ($8k+ earnings) with 5-star satisfaction.
 - **Software Engineering @ BIT, Bahir Dar University**
   - 5-year degree with strong foundations in system design and architecture.
