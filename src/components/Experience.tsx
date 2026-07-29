@@ -1,6 +1,22 @@
 import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const experiences = [
+interface ExperienceProject {
+  name: string;
+  description: string;
+  demoLink?: string;
+  githubLink?: string;
+}
+
+interface ExperienceItem {
+  role: string;
+  company: string;
+  period: string;
+  details: string;
+  projects: ExperienceProject[];
+}
+
+const experiences: ExperienceItem[] = [
   {
     role: "Full-Stack Developer",
     company: "Eagle Tech Apps",
@@ -11,16 +27,20 @@ const experiences = [
       {
         name: "SaaS Enterprise ERP",
         description: "Real-time resource management platform.",
+        demoLink: "https://example.com/saas-erp-demo",
+        githubLink: "https://github.com/solomon-mh/saas-erp",
       },
       {
         name: "Global E-commerce Dashboard",
         description: "High-performance analytics for vendors.",
+        demoLink: "https://example.com/ecommerce-dashboard-demo",
+        githubLink: "https://github.com/solomon-mh/ecommerce-dashboard",
       },
     ],
   },
   {
     role: "Freelance Full-Stack Developer",
-    company: "Upwork",
+    company: "Self-Employed",
     period: "2023 – Present",
     details:
       "Delivered 10+ successful freelance projects with consistent 5-star client satisfaction. Built scalable apps using MERN/V stack, Next.js, Nuxt.js, and NestJS.",
@@ -29,20 +49,24 @@ const experiences = [
         name: "Batjet - Financial Management Systems",
         description:
           "AI-powered financial management system for businesses located in Italy.",
+        demoLink: "https://example.com/batjet-demo",
+        githubLink: "https://github.com/solomon-mh/batjet",
       },
       {
         name: "PMS - Property Management System",
         description:
           "Real-time hotel booking and management system for hotels, flights, and tours located in Australia.",
+        demoLink: "https://example.com/pms-demo",
+        githubLink: "https://github.com/solomon-mh/pms",
       },
     ],
   },
   {
-    role: "LLM Trainer on Upwork",
-    company: "Upwork",
+    role: "LLM Trainer on Turing",
+    company: "Turing",
     period: "2026",
     details:
-      "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing. Worked on Upwork’s Human+Agent Productivity Index (HAPI).",
+      "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing. Worked on Turing’s Human+Agent Productivity Index (HAPI).",
     projects: [
       {
         name: "HAPI",
@@ -64,10 +88,13 @@ const experiences = [
       {
         name: "Fetanfews - Pharmacy Locator",
         description: "Location-based real-time medicine availability search.",
+        githubLink: "https://github.com/solomon-mh/fetanfews",
       },
       {
         name: "Mikander - Voice AI EdTech",
         description: "Interactive voice-enabled education platform.",
+        demoLink: "https://mikander.vercel.app/",
+        githubLink: "https://github.com/solomon-mh/mikander",
       },
     ],
   },
@@ -80,7 +107,9 @@ const experiences = [
     projects: [
       {
         name: "Internship Portal",
-        description: "Streamlined workflow for university placement.",
+        description:
+          "Streamlined workflow for university internship placement.",
+        githubLink: "https://github.com/DjanCoders/ICT4D_INTERNSHIP_PAGE",
       },
     ],
   },
@@ -140,6 +169,34 @@ const Experience = () => {
                       <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
                         {project.description}
                       </p>
+
+                      {/* Preview / GitHub links */}
+                      {(project.demoLink || project.githubLink) && (
+                        <div className="mt-2 flex gap-4 text-xs font-semibold">
+                          {project.githubLink && (
+                            <a
+                              href={project.githubLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-center gap-1 text-gray-800 dark:text-gray-200 hover:text-green-500"
+                            >
+                              <FaGithub /> GitHub
+                            </a>
+                          )}
+                          {project.demoLink && (
+                            <a
+                              href={project.demoLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-center gap-1 text-green-600 dark:text-green-400 hover:underline"
+                            >
+                              <FaExternalLinkAlt /> Preview
+                            </a>
+                          )}
+                        </div>
+                      )}
                     </motion.div>
                   ))}
                 </div>
