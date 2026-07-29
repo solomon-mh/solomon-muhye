@@ -1,15 +1,12 @@
-import About from "./components/About";
-import SkillsAndTools from "./components/SkillsAndTools";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-import Experience from "./components/Experience";
 import FloatingMenu from "./components/FloatingMenu";
 import CursorRipple from "./components/CursorRipple";
-import HeroSection from "./components/Hero";
 import { Slide, ToastContainer } from "react-toastify";
 import HangingToggle from "./components/FloatingToggler";
 import { Analytics } from "@vercel/analytics/react";
+import Home from "./pages/Home";
+import BlogPost from "./pages/BlogPost";
 
 export default function App() {
   return (
@@ -18,15 +15,13 @@ export default function App() {
         <Analytics />
         <CursorRipple />
         <HangingToggle />
-        <main className="w-5/6 lg:w-1/2 mx-auto space-y-12">
-          <HeroSection />
-          <About />
-          <Experience />
-          <SkillsAndTools />
-          <Projects />
-          <Contact />
-        </main>
-        <FloatingMenu />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+          </Routes>
+          <FloatingMenu />
+        </BrowserRouter>
         <Footer />
       </div>
       <ToastContainer
