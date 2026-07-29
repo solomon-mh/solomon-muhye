@@ -6,6 +6,7 @@ import {
   HiOutlineCode,
   HiOutlineChatAlt,
   HiOutlineBriefcase,
+  HiOutlinePencilAlt,
 } from "react-icons/hi";
 import { FiPlus } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
@@ -32,12 +33,17 @@ const FloatingMenu = () => {
   }, []);
 
   const menuItems = [
-    { icon: <HiOutlineHome />, label: "Home", href: "#hero" },
-    { icon: <HiOutlineUserCircle />, label: "About", href: "#about" },
-    { icon: <HiOutlineBriefcase />, label: "Experience", href: "#experience" },
-    { icon: <HiOutlineCog />, label: "Skills", href: "#skills" },
-    { icon: <HiOutlineCode />, label: "Projects", href: "#projects" },
-    { icon: <HiOutlineChatAlt />, label: "Contact", href: "#contact" },
+    { icon: <HiOutlineHome />, label: "Home", href: "/#hero" },
+    { icon: <HiOutlineUserCircle />, label: "About", href: "/#about" },
+    {
+      icon: <HiOutlineBriefcase />,
+      label: "Experience",
+      href: "/#experience",
+    },
+    { icon: <HiOutlineCog />, label: "Skills", href: "/#skills" },
+    { icon: <HiOutlineCode />, label: "Projects", href: "/#projects" },
+    { icon: <HiOutlinePencilAlt />, label: "Blog", href: "/#blog" },
+    { icon: <HiOutlineChatAlt />, label: "Contact", href: "/#contact" },
   ];
 
   return (
