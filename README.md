@@ -120,5 +120,5 @@ npm run dev
 
 - **LinkedIn**: [solomonmuhye](https://linkedin.com/in/solomonmuhye)
 - **GitHub**: [solomon-mh](https://github.com/solomon-mh)
-- **Telegram**: [@solomon_muhye](https://t.me/solomon_muhye)
+- **Telegram**: [@SolomonMuhye](https://t.me/SolomonMuhye)
 - **Resume**: [View Resume](https://flowcv.com/resume/4s26k4fimci0)
