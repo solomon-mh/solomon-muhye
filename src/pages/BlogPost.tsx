@@ -24,7 +24,7 @@ const BlogPost = () => {
   }
 
   return (
-    <article className="w-5/6 lg:w-1/2 mx-auto py-16">
+    <article className="w-5/6 lg:w-1/2 mx-auto min-h-screen py-16">
       <Link
         to="/#blog"
         className="text-sm font-semibold text-green-600 dark:text-green-400 hover:underline"
