@@ -31,10 +31,14 @@ const experiences: ExperienceItem[] = [
         githubLink: "https://github.com/solomon-mh/saas-erp",
       },
       {
-        name: "Global E-commerce Dashboard",
-        description: "High-performance analytics for vendors.",
-        demoLink: "https://example.com/ecommerce-dashboard-demo",
-        githubLink: "https://github.com/solomon-mh/ecommerce-dashboard",
+        name: "Batjet",
+        description:
+          "Managerial accounting mobile-friendly app for tracking expenses and revenues, with real-time insights into financial health. Private client project.",
+      },
+      {
+        name: "Nubred",
+        description:
+          "Neutral governance and variety-intelligence platform for agricultural biotech ecosystems — tracking plant genotypes, coordinating breeder/grower/company relationships, and managing value-linked royalty structures across variety commercialization projects. Private client project.",
       },
     ],
   },
