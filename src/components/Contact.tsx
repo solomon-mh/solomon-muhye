@@ -1,8 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaExclamationTriangle,
+} from "react-icons/fa";
 import emailjs from "emailjs-com";
-import { toast } from "react-toastify";
 
 const Contact = () => {
   // Enhanced typing effect with react-type-animation
@@ -19,7 +23,7 @@ const Contact = () => {
     message: string;
   }
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev: ContactFormData) => ({
@@ -37,23 +41,20 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         e.target as HTMLFormElement,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
         () => {
           setFormStatus("success");
           setFormData({ name: "", email: "", message: "" });
+          setTimeout(() => {
+            setFormStatus("idle");
+          }, 2300);
         },
         () => {
-          setFormStatus("idle");
-          toast.error("Something went wrong. Please try again later.");
-        }
-      )
-      .finally(() => {
-        setTimeout(() => {
-          setFormStatus("idle");
-        }, 2300);
-      });
+          setFormStatus("error");
+        },
+      );
   };
 
   return (
@@ -140,6 +141,63 @@ const Contact = () => {
                     <p className="text-gray-600 dark:text-gray-300">
                       I'll get back to you soon. Thanks for reaching out!
                     </p>
+                  </div>
+                ) : formStatus === "error" ? (
+                  <div className="text-center py-8">
+                    <motion.div
+                      initial={{ scale: 0.6, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      }}
+                      className="text-5xl mb-4 text-yellow-600 flex justify-center"
+                    >
+                      <FaExclamationTriangle />
+                    </motion.div>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                      Message Failed to Send
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      Something went wrong on our end. Please try again in a
+                      moment.
+                    </p>
+
+                    <motion.p
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.15 }}
+                      className="text-gray-700 dark:text-gray-300 mb-6"
+                    >
+                      or you can contact me using{" "}
+                      <motion.a
+                        href="mailto:solomon.muhye.wd@gmail.com"
+                        animate={{
+                          scale: [1, 1.04, 1],
+                          textShadow: [
+                            "0 0 0px rgba(16,185,129,0)",
+                            "0 0 8px rgba(16,185,129,0.6)",
+                            "0 0 0px rgba(16,185,129,0)",
+                          ],
+                        }}
+                        transition={{ duration: 2.2, repeat: Infinity }}
+                        whileHover={{ scale: 1.08 }}
+                        className="inline-block font-semibold text-green-600 dark:text-green-400 underline decoration-dotted"
+                      >
+                        solomon.muhye.wd@gmail.com
+                      </motion.a>
+                    </motion.p>
+
+                    <motion.button
+                      type="button"
+                      onClick={() => setFormStatus("idle")}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="py-3 px-6 rounded-full font-medium text-white bg-gradient-to-r from-green-600 to-green-500 hover:shadow-lg hover:shadow-green-500/30 transition-all"
+                    >
+                      Try Again
+                    </motion.button>
                   </div>
                 ) : (
                   <>
