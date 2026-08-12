@@ -25,7 +25,7 @@ const Hero = () => {
         transition={{ delay: 0.3 }}
         className="md:text-lg text-gray-600 dark:text-gray-300 mt-3"
       >
-        Senior Fullstack Developer & AI/ML Engineer.
+        Senior Fullstack Developer
       </motion.p>
 
       {/* Subtitle */}
@@ -37,8 +37,7 @@ const Hero = () => {
       >
         <span className="text-gray-700 dark:text-gray-400 font-normal">
           I build websites and mobile apps for international clients, making
-          them beautiful, efficient, and scalable, and trained AI efficiently,
-          as I did in Turing’s Human+Agent Productivity Index (HAPI).
+          them beautiful, efficient, and scalable.
         </span>
       </motion.p>
 
@@ -96,7 +95,7 @@ const Hero = () => {
           <FaLinkedin size={30} />
         </a>
         <a
-          href="https://t.me/solomon_muhye"
+          href="https://t.me/SolomonMuhye"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"

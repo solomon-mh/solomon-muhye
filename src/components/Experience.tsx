@@ -61,23 +61,23 @@ const experiences: ExperienceItem[] = [
       },
     ],
   },
-  {
-    role: "LLM Trainer on Turing",
-    company: "Turing",
-    period: "2026",
-    details:
-      "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing. Worked on Turing’s Human+Agent Productivity Index (HAPI).",
-    projects: [
-      {
-        name: "HAPI",
-        description: "Measuring human-agent synergy in productivity.",
-      },
-      {
-        name: "RLHF Data Pipeline",
-        description: "Curation for reinforcement learning from human feedback.",
-      },
-    ],
-  },
+  // {
+  //   role: "LLM Trainer on Turing",
+  //   company: "Turing",
+  //   period: "2026",
+  //   details:
+  //     "Managed and curated datasets for training and fine-tuning Large Language Models, ensuring data quality, consistency, and proper preprocessing. Worked on Turing’s Human+Agent Productivity Index (HAPI).",
+  //   projects: [
+  //     {
+  //       name: "HAPI",
+  //       description: "Measuring human-agent synergy in productivity.",
+  //     },
+  //     {
+  //       name: "RLHF Data Pipeline",
+  //       description: "Curation for reinforcement learning from human feedback.",
+  //     },
+  //   ],
+  // },
   {
     role: "Software Engineering",
     company: "BIT, Bahir Dar University",
