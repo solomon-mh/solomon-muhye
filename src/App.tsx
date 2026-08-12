@@ -7,6 +7,7 @@ import HangingToggle from "./components/FloatingToggler";
 import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <CursorRipple />
         <HangingToggle />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
