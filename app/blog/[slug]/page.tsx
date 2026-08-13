@@ -1,10 +1,56 @@
-import { Link, useParams } from "react-router-dom";
+import type { Metadata } from "next";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { blogs } from "../data/blogs";
+import { blogs } from "@/data/blogs";
+import { siteUrl } from "@/lib/siteConfig";
 
-const BlogPost = () => {
-  const { slug } = useParams<{ slug: string }>();
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export function generateStaticParams() {
+  return blogs.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogs.find((p) => p.slug === slug);
+
+  if (!post) {
+    return {
+      title: "Post not found",
+    };
+  }
+
+  const url = `${siteUrl}/blog/${post.slug}`;
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
+}
+
+export default async function BlogPost({ params }: Props) {
+  const { slug } = await params;
   const post = blogs.find((p) => p.slug === slug);
 
   if (!post) {
@@ -14,7 +60,7 @@ const BlogPost = () => {
           Post not found
         </h1>
         <Link
-          to="/"
+          href="/"
           className="mt-4 inline-block text-green-600 dark:text-green-400 hover:underline"
         >
           ← Back to portfolio
@@ -26,7 +72,7 @@ const BlogPost = () => {
   return (
     <article className="w-5/6 lg:w-1/2 mx-auto min-h-screen py-16">
       <Link
-        to="/#blog"
+        href="/#blog"
         className="text-sm font-semibold text-green-600 dark:text-green-400 hover:underline"
       >
         ← Back to blog
@@ -67,6 +113,4 @@ const BlogPost = () => {
       </div>
     </article>
   );
-};
-
-export default BlogPost;
+}

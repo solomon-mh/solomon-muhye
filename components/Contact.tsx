@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -9,8 +11,6 @@ import {
 import emailjs from "emailjs-com";
 
 const Contact = () => {
-  // Enhanced typing effect with react-type-animation
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,10 +38,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         e.target as HTMLFormElement,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       )
       .then(
         () => {
@@ -69,7 +69,7 @@ const Contact = () => {
         {/* Animated title with underline */}
         <div className="relative inline-block mb-6">
           <motion.h2 className="text-4xl font-bold text-center mb-6 text-green-600 dark:text-green-400">
-            Let's Collaborate
+            Let&apos;s Collaborate
           </motion.h2>
         </div>
 
@@ -139,7 +139,7 @@ const Contact = () => {
                       Message Sent!
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      I'll get back to you soon. Thanks for reaching out!
+                      I&apos;ll get back to you soon. Thanks for reaching out!
                     </p>
                   </div>
                 ) : formStatus === "error" ? (

@@ -1,4 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   HiOutlineHome,
   HiOutlineUserCircle,
@@ -94,24 +97,27 @@ const FloatingMenu = () => {
                   transition={{ duration: 0.03 }}
                 >
                   {menuItems.map((item) => (
-                    <motion.a
+                    <motion.div
                       key={item.label}
-                      href={item.href}
-                      className={`flex flex-col items-center text-md ${
-                        activeItem === item.label
-                          ? "text-green-600 dark:text-green-400"
-                          : "text-gray-600 dark:text-gray-300"
-                      } hover:text-green-700 dark:hover:text-green-300 transition-all duration-300 relative`}
                       whileHover={{ y: -3 }}
                       whileTap={{ scale: 0.95 }}
-                      onHoverStart={() => setActiveItem(item.label)}
-                      onHoverEnd={() => setActiveItem(null)}
                     >
-                      <div className="relative">{item.icon}</div>
-                      <span className="text-xs mt-1 font-medium">
-                        {item.label}
-                      </span>
-                    </motion.a>
+                      <Link
+                        href={item.href}
+                        className={`flex flex-col items-center text-md ${
+                          activeItem === item.label
+                            ? "text-green-600 dark:text-green-400"
+                            : "text-gray-600 dark:text-gray-300"
+                        } hover:text-green-700 dark:hover:text-green-300 transition-all duration-300 relative`}
+                        onMouseEnter={() => setActiveItem(item.label)}
+                        onMouseLeave={() => setActiveItem(null)}
+                      >
+                        <div className="relative">{item.icon}</div>
+                        <span className="text-xs mt-1 font-medium">
+                          {item.label}
+                        </span>
+                      </Link>
+                    </motion.div>
                   ))}
                 </motion.div>
               )}
