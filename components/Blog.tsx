@@ -138,6 +138,15 @@ const Blog = () => {
             ))}
           </div>
         )}
+
+        <div className="mt-6 text-center">
+          <Link
+            href="/blog"
+            className="text-sm font-semibold text-green-600 dark:text-green-400 hover:underline"
+          >
+            View all blog posts →
+          </Link>
+        </div>
       </div>
     </section>
   );

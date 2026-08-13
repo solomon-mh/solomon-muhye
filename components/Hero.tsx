@@ -5,7 +5,7 @@ import { FaGithub, FaLink, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section
+    <header
       id="hero"
       className="relative pt-24 pb-12 md:bp-0 md:py-0 md:min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
     >
@@ -84,8 +84,9 @@ const Hero = () => {
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"
           title="GitHub"
+          aria-label="Solomon Muhye on GitHub"
         >
-          <FaGithub size={30} />
+          <FaGithub size={30} aria-hidden="true" />
         </a>
         <a
           href="https://linkedin.com/in/solomonmuhye"
@@ -93,8 +94,9 @@ const Hero = () => {
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"
           title="LinkedIn"
+          aria-label="Solomon Muhye on LinkedIn"
         >
-          <FaLinkedin size={30} />
+          <FaLinkedin size={30} aria-hidden="true" />
         </a>
         <a
           href="https://t.me/SolomonMuhye"
@@ -102,11 +104,12 @@ const Hero = () => {
           rel="noopener noreferrer"
           className="hover:scale-125 transition-transform"
           title="Telegram"
+          aria-label="Message Solomon Muhye on Telegram"
         >
-          <FaTelegramPlane size={30} />
+          <FaTelegramPlane size={30} aria-hidden="true" />
         </a>
       </div>
-    </section>
+    </header>
   );
 };
 
