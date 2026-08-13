@@ -1,5 +1,7 @@
+"use client";
+
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { projects } from "../data/projects";
+import { projects } from "@/data/projects";
 import { useState } from "react";
 
 const Projects = () => {
@@ -26,8 +28,8 @@ const Projects = () => {
         <div className="relative pl-10">
           {/* Main vertical line with gradient */}
           <div
-            className="absolute left-4 top-0 h-full w-[2px] 
-                       bg-gradient-to-b from-green-500 via-green-300 to-gray-50 
+            className="absolute left-4 top-0 h-full w-[2px]
+                       bg-gradient-to-b from-green-500 via-green-300 to-gray-50
                        dark:from-green-600 dark:via-green-300 dark:to-gray-900"
           />
 
@@ -51,7 +53,7 @@ const Projects = () => {
                     {proj.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs font-medium bg-gray-100 text-green-700 
+                        className="text-xs font-medium bg-gray-100 text-green-700
                                    dark:bg-gray-800 dark:text-white px-2 py-0.5 rounded"
                       >
                         {tech}
@@ -89,9 +91,9 @@ const Projects = () => {
           <div className="mt-12 text-center">
             <button
               onClick={toggleShowMore}
-              className="px-6 py-2 text-sm font-semibold rounded-lg 
-                         bg-gray-200 dark:text-white hover:bg-gray-300 
-                         dark:bg-gray-800 dark:hover:bg-gray-700 
+              className="px-6 py-2 text-sm font-semibold rounded-lg
+                         bg-gray-200 dark:text-white hover:bg-gray-300
+                         dark:bg-gray-800 dark:hover:bg-gray-700
                          transition-colors"
             >
               {showMore ? "Show Less" : "Show More"}

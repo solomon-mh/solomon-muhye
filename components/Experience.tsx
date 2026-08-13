@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -134,7 +136,7 @@ const Experience = () => {
       <div className="relative max-w-4xl mx-auto pl-6">
         {/* Gradient vertical line */}
         <div
-          className="absolute left-0 top-0 h-full w-[2px] 
+          className="absolute left-0 top-0 h-full w-[2px]
                bg-gradient-to-b from-green-500 via-green-300 to-gray-50
                dark:from-green-600 dark:via-green-300 dark:to-gray-900"
         />

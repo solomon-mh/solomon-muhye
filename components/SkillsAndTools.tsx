@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { skillData, type SkillCategory } from "./SkillsList";
 

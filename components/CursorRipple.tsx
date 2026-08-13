@@ -1,4 +1,5 @@
-// components/CursorRipple.jsx or .tsx
+"use client";
+
 import { useEffect, useState } from "react";
 
 const CursorRipple = () => {

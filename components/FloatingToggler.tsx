@@ -1,11 +1,20 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { motion, type TargetAndTransition } from "framer-motion";
 import { LightBulb } from "./LightBulb";
 
 const HangingToggle = () => {
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark"
-  );
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Sync with the theme already applied by the blocking init script in <head>.
+  // Deliberately a post-mount effect (not derived during render): reading it during
+  // render would make the client's first pass diverge from the server-rendered HTML
+  // (which has no access to the DOM/localStorage) and trigger a hydration mismatch.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setDarkMode(document.documentElement.classList.contains("dark"));
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);

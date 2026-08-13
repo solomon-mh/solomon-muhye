@@ -1,8 +1,10 @@
+"use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { blogs } from "../data/blogs";
+import { blogs } from "@/data/blogs";
 
 const slideVariants = {
   enter: (direction: number) => ({
@@ -110,7 +112,7 @@ const Blog = () => {
               </div>
 
               <Link
-                to={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}`}
                 className="mt-4 text-sm font-semibold text-green-600 dark:text-green-400 hover:underline self-start"
               >
                 Read more →

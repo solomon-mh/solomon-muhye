@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FaGithub, FaLink, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 
