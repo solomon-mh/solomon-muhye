@@ -31,7 +31,7 @@ const FloatingMenu = () => {
         setIsOpen(false);
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -52,7 +52,8 @@ const FloatingMenu = () => {
   return (
     <AnimatePresence>
       {scrolled && (
-        <motion.div
+        <motion.nav
+          aria-label="Section navigation"
           className="fixed hidden lg:flex bottom-8 left-1/2 transform -translate-x-1/2 z-50"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,6 +74,9 @@ const FloatingMenu = () => {
             }}
           >
             <motion.button
+              type="button"
+              aria-label={isOpen ? "Collapse navigation menu" : "Expand navigation menu"}
+              aria-expanded={isOpen}
               className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 text-white shadow-md"
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.9 }}
@@ -83,7 +87,7 @@ const FloatingMenu = () => {
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <FiPlus size={20} />
+                <FiPlus size={20} aria-hidden="true" />
               </motion.span>
             </motion.button>
 
@@ -112,7 +116,9 @@ const FloatingMenu = () => {
                         onMouseEnter={() => setActiveItem(item.label)}
                         onMouseLeave={() => setActiveItem(null)}
                       >
-                        <div className="relative">{item.icon}</div>
+                        <div className="relative" aria-hidden="true">
+                          {item.icon}
+                        </div>
                         <span className="text-xs mt-1 font-medium">
                           {item.label}
                         </span>
@@ -123,7 +129,7 @@ const FloatingMenu = () => {
               )}
             </AnimatePresence>
           </motion.div>
-        </motion.div>
+        </motion.nav>
       )}
     </AnimatePresence>
   );

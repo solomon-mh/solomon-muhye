@@ -24,15 +24,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "Solomon Muhye",
-    "Fullstack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Software Engineer",
-    "Web Developer Portfolio",
-    "Freelance Developer",
-  ],
+  keywords: siteConfig.keywords,
   authors: [{ name: siteConfig.author, url: siteConfig.url }],
   creator: siteConfig.author,
   icons: {
@@ -47,20 +39,11 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 512,
-        height: 512,
-        alt: siteConfig.name,
-      },
-    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteConfig.title,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    description: siteConfig.shortDescription,
   },
   robots: {
     index: true,
@@ -88,15 +71,21 @@ const themeInitScript = `
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${siteConfig.url}#person`,
   name: siteConfig.name,
   url: siteConfig.url,
   jobTitle: siteConfig.role,
+  description: siteConfig.description,
   email: `mailto:${siteConfig.email}`,
   sameAs: [
     siteConfig.links.github,
     siteConfig.links.linkedin,
     siteConfig.links.telegram,
   ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Bahir Dar University",
+  },
   knowsAbout: [
     "React",
     "Next.js",
@@ -104,9 +93,22 @@ const personJsonLd = {
     "NestJS",
     "TypeScript",
     "Vue.js",
+    "Nuxt.js",
+    "React Native",
     "MongoDB",
     "PostgreSQL",
   ],
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteConfig.url}#website`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  inLanguage: "en",
+  publisher: { "@id": `${siteConfig.url}#person` },
 };
 
 export default function RootLayout({
@@ -125,6 +127,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
       </head>
       <body

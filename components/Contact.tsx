@@ -116,7 +116,7 @@ const Contact = () => {
               className="text-3xl text-gray-700 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-all"
               aria-label={item.label}
             >
-              {item.icon}
+              <span aria-hidden="true">{item.icon}</span>
             </motion.a>
           ))}
         </motion.div>
