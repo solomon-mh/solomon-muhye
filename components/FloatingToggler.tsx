@@ -1,11 +1,20 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { motion, type TargetAndTransition } from "framer-motion";
 import { LightBulb } from "./LightBulb";
 
 const HangingToggle = () => {
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark"
-  );
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Sync with the theme already applied by the blocking init script in <head>.
+  // Deliberately a post-mount effect (not derived during render): reading it during
+  // render would make the client's first pass diverge from the server-rendered HTML
+  // (which has no access to the DOM/localStorage) and trigger a hydration mismatch.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setDarkMode(document.documentElement.classList.contains("dark"));
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
@@ -31,7 +40,7 @@ const HangingToggle = () => {
   };
 
   return (
-    <div className="fixed top-0 right-0 md:right-10 z-50 flex flex-col items-center cursor-pointer select-none">
+    <div className="fixed top-0 right-0 md:right-10 z-50 flex flex-col items-center select-none">
       {/* Rope */}
       <motion.svg
         width="180"
@@ -39,6 +48,7 @@ const HangingToggle = () => {
         viewBox="0 0 10 100"
         animate={ropeSway}
         className="overflow-visible"
+        aria-hidden="true"
       >
         <motion.path
           d="M5 0 Q 10 10, 5 20 Q 0 30, 5 40 Q 10 50, 5 60 Q 0 70, 5 80 Q 10 90, 5 100"
@@ -50,7 +60,11 @@ const HangingToggle = () => {
       </motion.svg>
 
       {/* Bulb */}
-      <motion.div
+      <motion.button
+        type="button"
+        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+        aria-pressed={darkMode}
+        className="cursor-pointer appearance-none border-0 bg-transparent p-0"
         animate={sway}
         whileHover={{ rotate: 4, scale: 1.05 }}
         whileTap={{ scale: 0.92, rotate: 0 }}
@@ -72,7 +86,7 @@ const HangingToggle = () => {
         >
           {darkMode ? <LightBulb isOn={false} /> : <LightBulb isOn={true} />}
         </motion.div>
-      </motion.div>
+      </motion.button>
     </div>
   );
 };

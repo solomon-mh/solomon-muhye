@@ -1,5 +1,5 @@
-import customEd from "../assets/customEd.png";
-import beteseb from "../assets/beteseb.png";
+import customEd from "@/assets/customEd.png";
+import beteseb from "@/assets/beteseb.png";
 
 export const projects = [
   {

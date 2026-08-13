@@ -1,4 +1,5 @@
-// components/CursorRipple.jsx or .tsx
+"use client";
+
 import { useEffect, useState } from "react";
 
 const CursorRipple = () => {
@@ -9,12 +10,13 @@ const CursorRipple = () => {
     const handleMouseMove = (e: MouseEvent) => {
       setCoords({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
     <div
+      aria-hidden="true"
       className="pointer-events-none fixed top-0 left-0 z-[9998] transition-all duration-100 ease-out"
       style={{
         transform: `translate(${coords.x - RIPPLE_SIZE / 2}px, ${
